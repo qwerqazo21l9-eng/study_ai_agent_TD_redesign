@@ -6,7 +6,7 @@ model:
   local_llm_context_window: 8192
 
   # 智谱AI 配置（在这里填！）
-  cloud_api_key: "33d886fdf2634eedae745273d3ba49c3.N6GOVyAwkTKwmMMA"
+  cloud_api_key: "*****"
   cloud_api_base: "https://open.bigmodel.cn/api/paas/v4/"
   cloud_model_name: "glm-4-flash"   # 免费快版
 
