@@ -1,0 +1,979 @@
+2026-06-09 16:39:10 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-09 16:41:31 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-09 16:45:47 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-09 16:45:52 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-09 16:45:52 | INFO | Loaded document registry: 3 files
+2026-06-09 16:45:52 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-09 16:45:52 | INFO | Deduplication initialized
+2026-06-09 16:45:52 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-09 16:45:53 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-09 16:45:53 | INFO | BM25 index loaded: 75 documents
+2026-06-09 16:45:53 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-09 16:45:53 | INFO | 工具系统已初始化: provider=tavily
+2026-06-09 16:45:53 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-09 16:45:58 | INFO | CrossEncoder model loaded successfully
+2026-06-09 16:47:26 | INFO | [default] 用户提问：你好，你是谁
+2026-06-09 16:47:26 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-09 16:47:31 | INFO | MemoryManager initialized
+2026-06-09 16:47:31 | INFO | 记忆管理器已初始化
+2026-06-09 16:47:31 | INFO | === Running Agent for query: 你好，你是谁... ===
+2026-06-09 16:47:31 | INFO | Route: PURE_LLM (keyword: 你好)
+2026-06-09 16:47:31 | INFO | Router: pure_llm
+2026-06-09 16:47:31 | INFO | Route -> Pure LLM
+2026-06-09 16:47:31 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-09 16:47:31 | INFO | Initializing LLM: glm-4-flash
+2026-06-09 16:47:35 | INFO | Generator producing response for: 你好，你是谁...
+2026-06-09 16:47:35 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-09 16:47:35 | INFO | generate_pure_llm: history turns=0, query_len=6
+2026-06-09 16:47:38 | INFO | Generator: using generate_pure_llm
+2026-06-09 16:47:38 | INFO | Generator done, response length: 41
+2026-06-09 16:47:38 | INFO | 路径: pure_llm
+2026-06-09 16:47:38 | INFO | [default] 回答: 你好！我是人工智能助手，专门设计来帮助解答问题和提供信息的。有什么可以帮助你的吗？...
+2026-06-09 16:48:07 | INFO | [default] 用户提问：你有哪些工具
+2026-06-09 16:48:07 | INFO | === Running Agent for query: 你有哪些工具... ===
+2026-06-09 16:48:07 | INFO | Route: PURE_LLM (short query without question)
+2026-06-09 16:48:07 | INFO | Router: pure_llm
+2026-06-09 16:48:07 | INFO | Route -> Pure LLM
+2026-06-09 16:48:07 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-09 16:48:07 | INFO | Generator producing response for: 你有哪些工具...
+2026-06-09 16:48:07 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-09 16:48:07 | INFO | generate_pure_llm: history turns=0, query_len=6
+2026-06-09 16:48:15 | INFO | Generator: using generate_pure_llm
+2026-06-09 16:48:15 | INFO | Generator done, response length: 263
+2026-06-09 16:48:15 | INFO | 路径: pure_llm
+2026-06-09 16:48:15 | INFO | [default] 回答: 我作为人工智能助手，具备以下工具：
+
+1. **知识库查询**：我可以访问大量的信息，包括历史、科学、文化、技术等领域的知识。
+2. **自然语言处理**：使我能够理解并生成自然语言，与用户进行对话。...
+2026-06-10 09:48:38 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 09:48:44 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 09:48:44 | INFO | Loaded document registry: 3 files
+2026-06-10 09:48:44 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 09:48:44 | INFO | Deduplication initialized
+2026-06-10 09:48:44 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 09:48:45 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 09:48:45 | INFO | BM25 index loaded: 75 documents
+2026-06-10 09:48:45 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 09:48:45 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 09:51:23 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 09:51:28 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 09:51:28 | INFO | Loaded document registry: 3 files
+2026-06-10 09:51:28 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 09:51:28 | INFO | Deduplication initialized
+2026-06-10 09:51:28 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 09:51:28 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 09:51:28 | INFO | BM25 index loaded: 75 documents
+2026-06-10 09:51:28 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 09:51:28 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 09:51:28 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 09:51:28 | INFO | DataProcessingTool 已注册
+2026-06-10 09:51:29 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 09:51:35 | INFO | CrossEncoder model loaded successfully
+2026-06-10 09:52:58 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 09:53:03 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 09:53:03 | INFO | Loaded document registry: 3 files
+2026-06-10 09:53:03 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 09:53:03 | INFO | Deduplication initialized
+2026-06-10 09:53:03 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 09:53:04 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 09:53:04 | INFO | BM25 index loaded: 75 documents
+2026-06-10 09:53:04 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 09:53:04 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 09:53:04 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 09:53:04 | INFO | DataProcessingTool 已注册
+2026-06-10 09:53:04 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 09:53:09 | INFO | CrossEncoder model loaded successfully
+2026-06-10 09:58:48 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4对该文件进行数据分析
+2026-06-10 09:58:48 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 09:58:54 | INFO | MemoryManager initialized
+2026-06-10 09:58:54 | INFO | 记忆管理器已初始化
+2026-06-10 09:58:54 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 09:58:54 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 09:58:54 | INFO | Router: tools
+2026-06-10 09:58:54 | INFO | Route -> Tools (data processing)
+2026-06-10 09:58:54 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 09:58:54 | INFO | 路径: tools
+2026-06-10 09:58:54 | INFO | [default] 回答: 未知的工具调用请求。...
+2026-06-10 10:02:09 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 10:02:15 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 10:02:15 | INFO | Loaded document registry: 3 files
+2026-06-10 10:02:15 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 10:02:15 | INFO | Deduplication initialized
+2026-06-10 10:02:15 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 10:02:15 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 10:02:15 | INFO | BM25 index loaded: 75 documents
+2026-06-10 10:02:15 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 10:02:15 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 10:02:15 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 10:02:15 | INFO | DataProcessingTool 已注册
+2026-06-10 10:02:15 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 10:02:21 | INFO | CrossEncoder model loaded successfully
+2026-06-10 10:03:25 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:03:25 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 10:03:31 | INFO | MemoryManager initialized
+2026-06-10 10:03:31 | INFO | 记忆管理器已初始化
+2026-06-10 10:03:31 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:03:31 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:03:31 | INFO | Router: tools
+2026-06-10 10:03:31 | INFO | Route -> Tools (data processing)
+2026-06-10 10:03:31 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:03:31 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:03:31 | INFO | 路径: tools
+2026-06-10 10:03:31 | INFO | [default] 回答: 数据处理失败：数据处理工具执行异常：unexpected indent (skill_eda_agent.py, line 221)...
+2026-06-10 10:07:02 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 10:07:08 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 10:07:08 | INFO | Loaded document registry: 3 files
+2026-06-10 10:07:08 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 10:07:08 | INFO | Deduplication initialized
+2026-06-10 10:07:08 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 10:07:08 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 10:07:08 | INFO | BM25 index loaded: 75 documents
+2026-06-10 10:07:08 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 10:07:08 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 10:07:08 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 10:07:08 | INFO | DataProcessingTool 已注册
+2026-06-10 10:07:08 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 10:07:14 | INFO | CrossEncoder model loaded successfully
+2026-06-10 10:08:01 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:08:01 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 10:08:07 | INFO | MemoryManager initialized
+2026-06-10 10:08:07 | INFO | 记忆管理器已初始化
+2026-06-10 10:08:07 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:08:07 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:08:07 | INFO | Router: tools
+2026-06-10 10:08:07 | INFO | Route -> Tools (data processing)
+2026-06-10 10:08:07 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:08:07 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 10:10:06 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:10:06 | INFO | 路径: tools
+2026-06-10 10:10:06 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 10:15:52 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 10:15:58 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 10:15:58 | INFO | Loaded document registry: 3 files
+2026-06-10 10:15:58 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 10:15:58 | INFO | Deduplication initialized
+2026-06-10 10:15:58 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 10:15:58 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 10:15:58 | INFO | BM25 index loaded: 75 documents
+2026-06-10 10:15:58 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 10:15:58 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 10:15:58 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 10:15:58 | INFO | DataProcessingTool 已注册
+2026-06-10 10:15:58 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 10:16:04 | INFO | CrossEncoder model loaded successfully
+2026-06-10 10:17:23 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:17:23 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 10:17:30 | INFO | MemoryManager initialized
+2026-06-10 10:17:30 | INFO | 记忆管理器已初始化
+2026-06-10 10:17:30 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:17:30 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:17:30 | INFO | Router: tools
+2026-06-10 10:17:30 | INFO | Route -> Tools (data processing)
+2026-06-10 10:17:30 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:17:30 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 10:19:24 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:19:24 | INFO | 路径: tools
+2026-06-10 10:19:24 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 10:36:38 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 10:36:43 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 10:36:43 | INFO | Loaded document registry: 3 files
+2026-06-10 10:36:43 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 10:36:43 | INFO | Deduplication initialized
+2026-06-10 10:36:43 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 10:36:44 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 10:36:44 | INFO | BM25 index loaded: 75 documents
+2026-06-10 10:36:44 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 10:36:44 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 10:36:44 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 10:36:44 | INFO | DataProcessingTool 已注册
+2026-06-10 10:36:44 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 10:36:50 | INFO | CrossEncoder model loaded successfully
+2026-06-10 10:37:45 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:37:45 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 10:37:59 | INFO | MemoryManager initialized
+2026-06-10 10:37:59 | INFO | 记忆管理器已初始化
+2026-06-10 10:37:59 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:38:00 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:38:00 | INFO | Router: tools
+2026-06-10 10:38:00 | INFO | Route -> Tools (data processing)
+2026-06-10 10:38:01 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:38:02 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 10:40:37 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:40:37 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 10:40:37 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 10:40:37 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 10:40:37 | INFO | 路径: tools
+2026-06-10 10:40:37 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 10:46:03 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 10:46:08 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 10:46:08 | INFO | Loaded document registry: 3 files
+2026-06-10 10:46:08 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 10:46:08 | INFO | Deduplication initialized
+2026-06-10 10:46:08 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 10:46:09 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 10:46:09 | INFO | BM25 index loaded: 75 documents
+2026-06-10 10:46:09 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 10:46:09 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 10:46:09 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 10:46:09 | INFO | DataProcessingTool 已注册
+2026-06-10 10:46:09 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 10:46:14 | INFO | CrossEncoder model loaded successfully
+2026-06-10 10:47:02 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:47:02 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 10:47:07 | INFO | MemoryManager initialized
+2026-06-10 10:47:07 | INFO | 记忆管理器已初始化
+2026-06-10 10:47:07 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:47:07 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:47:07 | INFO | Router: tools
+2026-06-10 10:47:07 | INFO | Route -> Tools (data processing)
+2026-06-10 10:47:07 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:47:07 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 10:49:40 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:49:40 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 10:49:40 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 10:49:40 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 10:49:40 | INFO | 路径: tools
+2026-06-10 10:49:40 | INFO | [default] 回答: 本次信贷数据分析项目共处理了200,000条原始数据，经过清洗后，数据行数保持不变，列数从151减少至89，删除了部分无关列。数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。在好坏样...
+2026-06-10 10:53:08 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 10:53:08 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 10:53:08 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 10:53:08 | INFO | Router: tools
+2026-06-10 10:53:08 | INFO | Route -> Tools (data processing)
+2026-06-10 10:53:08 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 10:55:34 | INFO | Tool data_processing: executed successfully
+2026-06-10 10:55:34 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 10:55:34 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 10:55:34 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 10:55:34 | INFO | 路径: tools
+2026-06-10 10:55:34 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 11:13:50 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 11:13:55 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 11:13:55 | INFO | Loaded document registry: 3 files
+2026-06-10 11:13:55 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 11:13:55 | INFO | Deduplication initialized
+2026-06-10 11:13:55 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 11:13:55 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 11:13:55 | INFO | BM25 index loaded: 75 documents
+2026-06-10 11:13:55 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 11:13:55 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 11:13:55 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 11:13:55 | INFO | DataProcessingTool 已注册
+2026-06-10 11:13:55 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 11:14:00 | INFO | CrossEncoder model loaded successfully
+2026-06-10 11:15:35 | INFO | [default] 用户提问：C:\AI Agent\study_ai_agent_TD_redesign\output\微信图片_20260610105657_720_3
+2026-06-10 11:15:35 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 11:15:40 | INFO | MemoryManager initialized
+2026-06-10 11:15:40 | INFO | 记忆管理器已初始化
+2026-06-10 11:15:40 | INFO | === Running Agent for query: C:\AI Agent\study_ai_agent_TD_redesign\output\微信图片... ===
+2026-06-10 11:15:40 | INFO | Route: REACT (keyword: 2026)
+2026-06-10 11:15:40 | INFO | Router: react
+2026-06-10 11:15:40 | INFO | Route -> ReAct Loop
+2026-06-10 11:15:40 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 11:15:40 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 11:15:43 | INFO | === ReAct Loop starting for: C:\AI Agent\study_ai_agent_TD_redesign\output\微信图片... ===
+2026-06-10 11:15:43 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 11:15:43 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 11:15:49 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "还缺少所有与用户问题相关的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "微信图片_20260610105657_720_3",
+    "reasoning": "由于没有收集到任何信息，需要从本地知识库检索相关信息。"
+}
+```
+2026-06-10 11:15:49 | INFO | Decision: RETRIEVE - 由于没有收集到任何信息，需要从本地知识库检索相关信息。
+2026-06-10 11:15:49 | INFO | ReAct Retrieve: 微信图片_20260610105657_720_3...
+2026-06-10 11:15:49 | INFO | Retriever processing query: 微信图片_20260610105657_720_3...
+2026-06-10 11:15:49 | INFO | Retriever: starting knowledge base search
+2026-06-10 11:15:54 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 11:15:54 | INFO | Loaded document registry: 3 files
+2026-06-10 11:15:54 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 11:15:54 | INFO | Deduplication initialized
+2026-06-10 11:15:54 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 11:15:54 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 11:15:54 | INFO | BM25 index loaded: 75 documents
+2026-06-10 11:15:57 | INFO | Vector retrieval: 30 candidates
+2026-06-10 11:15:57 | INFO | BM25 search: query='微信图片_20260610105657_720_3...', found 30 results
+2026-06-10 11:15:57 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 11:15:57 | INFO | RRF fusion: 2 result sets, 17 unique docs, top 17 returned
+2026-06-10 11:15:57 | INFO | RRF fusion: 17 fused results
+2026-06-10 11:15:57 | INFO |   [粗排1] rrf=0.1156 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+17
+测试样本和异常测试样本的语义分割图，局部异常检测图和全局异常检测图如图
+4-2 所示...
+2026-06-10 11:15:57 | INFO |   [粗排2] rrf=0.1120 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.7 直方图统计异常检测
+3.7.1 类别直方图
+使用分割网络输出测试集的分割结果，按照前文的定义计算直方图向量
+( ...
+2026-06-10 11:15:57 | INFO |   [粗排3] rrf=0.0327 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 率。 为了提升复杂场景下特征提取的效果， 不同于CSAD 对于局部学生网络和自
+编码器的设置[21]，本文使用了 CBA...
+2026-06-10 11:15:57 | INFO |   [粗排4] rrf=0.0201 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | millisecond-level latencies[C] . Proceedings of the IEEE/CVF...
+2026-06-10 11:15:57 | INFO |   [粗排5] rrf=0.0142 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | [13] Li C L, Sohn K, Yoon J, et al. Cutpaste: Self -supervis...
+2026-06-10 11:16:01 | INFO | After reranking: 5 results
+2026-06-10 11:16:01 | INFO | Hybrid search final: 5 results
+2026-06-10 11:16:01 | INFO |   [最终1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ..................................................
+2026-06-10 11:16:01 | INFO |   [最终2] score=0.0040 source=Unknown | N/A...
+2026-06-10 11:16:01 | INFO |   [最终3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..........................................................
+2026-06-10 11:16:01 | INFO |   [最终4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+...
+2026-06-10 11:16:01 | INFO |   [最终5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作...
+2026-06-10 11:16:01 | INFO | Knowledge base: 5 results
+2026-06-10 11:16:01 | INFO |   [精排1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ......................................................................
+2026-06-10 11:16:01 | INFO |   [精排2] score=0.0040 source=Unknown | ...
+2026-06-10 11:16:01 | INFO |   [精排3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..............................................................................
+2026-06-10 11:16:01 | INFO |   [精排4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+学制 4 入学日期 2021/09 毕业...
+2026-06-10 11:16:01 | INFO |   [精排5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作）
+学制 4 入学日期 2021/09 ...
+2026-06-10 11:16:01 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 11:16:01 | INFO | Retriever: building context
+2026-06-10 11:16:01 | INFO | _build_context: KB context length=2155, preview=[来源 1: 基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf] (相关度: 0.01)
+3.5 逻辑合成异常增强 ......................................................................................... 9
+3.6 损失函数 ..............................
+2026-06-10 11:16:01 | INFO | Retriever: context built, length=2165
+2026-06-10 11:16:01 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 11:16:01 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 11:16:01 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 11:16:01 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 11:16:01 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 11:16:01 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 11:16:08 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息仅包括知识库中的文档标题和部分内容，这些内容与逻辑合成、损失函数、直方图统计异常检测等相关，但并未直接关联到用户提供的图片或具体问题。",
+    "gap": "缺少与用户提供的图片内容直接相关的信息，以及用户问题的具体内容。",
+    "next_action": "RETRIEVE",
+    "action_input": "微信图片_20260610105657_720_3",
+    "reasoning": "由于没有收集到任何与用户问题相关的信息，需要从本地知识库检索相关信息，以获取与图片内容相关的文档。"
+}
+```
+2026-06-10 11:16:08 | INFO | Decision: RETRIEVE - 由于没有收集到任何与用户问题相关的信息，需要从本地知识库检索相关信息，以获取与图片内容相关的文档。
+2026-06-10 11:16:08 | INFO | ReAct Retrieve: 微信图片_20260610105657_720_3...
+2026-06-10 11:16:08 | INFO | Retriever processing query: 微信图片_20260610105657_720_3...
+2026-06-10 11:16:08 | INFO | Retriever: starting knowledge base search
+2026-06-10 11:16:08 | INFO | Vector retrieval: 30 candidates
+2026-06-10 11:16:08 | INFO | BM25 search: query='微信图片_20260610105657_720_3...', found 30 results
+2026-06-10 11:16:08 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 11:16:08 | INFO | RRF fusion: 2 result sets, 17 unique docs, top 17 returned
+2026-06-10 11:16:08 | INFO | RRF fusion: 17 fused results
+2026-06-10 11:16:08 | INFO |   [粗排1] rrf=0.1156 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+17
+测试样本和异常测试样本的语义分割图，局部异常检测图和全局异常检测图如图
+4-2 所示...
+2026-06-10 11:16:08 | INFO |   [粗排2] rrf=0.1120 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.7 直方图统计异常检测
+3.7.1 类别直方图
+使用分割网络输出测试集的分割结果，按照前文的定义计算直方图向量
+( ...
+2026-06-10 11:16:08 | INFO |   [粗排3] rrf=0.0327 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 率。 为了提升复杂场景下特征提取的效果， 不同于CSAD 对于局部学生网络和自
+编码器的设置[21]，本文使用了 CBA...
+2026-06-10 11:16:08 | INFO |   [粗排4] rrf=0.0201 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | millisecond-level latencies[C] . Proceedings of the IEEE/CVF...
+2026-06-10 11:16:08 | INFO |   [粗排5] rrf=0.0142 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | [13] Li C L, Sohn K, Yoon J, et al. Cutpaste: Self -supervis...
+2026-06-10 11:16:10 | INFO | After reranking: 5 results
+2026-06-10 11:16:10 | INFO | Hybrid search final: 5 results
+2026-06-10 11:16:10 | INFO |   [最终1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ..................................................
+2026-06-10 11:16:10 | INFO |   [最终2] score=0.0040 source=Unknown | N/A...
+2026-06-10 11:16:10 | INFO |   [最终3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..........................................................
+2026-06-10 11:16:10 | INFO |   [最终4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+...
+2026-06-10 11:16:10 | INFO |   [最终5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作...
+2026-06-10 11:16:10 | INFO | Knowledge base: 5 results
+2026-06-10 11:16:10 | INFO |   [精排1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ......................................................................
+2026-06-10 11:16:10 | INFO |   [精排2] score=0.0040 source=Unknown | ...
+2026-06-10 11:16:10 | INFO |   [精排3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..............................................................................
+2026-06-10 11:16:10 | INFO |   [精排4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+学制 4 入学日期 2021/09 毕业...
+2026-06-10 11:16:10 | INFO |   [精排5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作）
+学制 4 入学日期 2021/09 ...
+2026-06-10 11:16:10 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 11:16:10 | INFO | Retriever: building context
+2026-06-10 11:16:10 | INFO | _build_context: KB context length=2155, preview=[来源 1: 基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf] (相关度: 0.01)
+3.5 逻辑合成异常增强 ......................................................................................... 9
+3.6 损失函数 ..............................
+2026-06-10 11:16:10 | INFO | Retriever: context built, length=2165
+2026-06-10 11:16:10 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 11:16:10 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 11:16:10 | INFO | _should_finish result: False, retrieved_docs=2, web_results=0, iteration=1
+2026-06-10 11:16:10 | INFO | After increment: iteration=2, while condition: 2 < 5 = True
+2026-06-10 11:16:10 | INFO | === Loop start: iteration=2, max=5 ===
+2026-06-10 11:16:10 | INFO | --- ReAct Iteration 3/5 ---
+2026-06-10 11:16:17 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息仅包括知识库中的文档标题和部分内容，但这些内容与用户问题无关，因此不能充分回答用户问题。",
+    "gap": "缺少与用户问题相关的具体信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "微信图片_20260610105657_720_3",
+    "reasoning": "需要从本地知识库中检索与用户上传图片相关的具体信息。"
+}
+```
+2026-06-10 11:16:17 | INFO | Decision: RETRIEVE - 需要从本地知识库中检索与用户上传图片相关的具体信息。
+2026-06-10 11:16:17 | INFO | ReAct Retrieve: 微信图片_20260610105657_720_3...
+2026-06-10 11:16:17 | INFO | Retriever processing query: 微信图片_20260610105657_720_3...
+2026-06-10 11:16:17 | INFO | Retriever: starting knowledge base search
+2026-06-10 11:16:17 | INFO | Vector retrieval: 30 candidates
+2026-06-10 11:16:17 | INFO | BM25 search: query='微信图片_20260610105657_720_3...', found 30 results
+2026-06-10 11:16:17 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 11:16:17 | INFO | RRF fusion: 2 result sets, 17 unique docs, top 17 returned
+2026-06-10 11:16:17 | INFO | RRF fusion: 17 fused results
+2026-06-10 11:16:17 | INFO |   [粗排1] rrf=0.1156 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+17
+测试样本和异常测试样本的语义分割图，局部异常检测图和全局异常检测图如图
+4-2 所示...
+2026-06-10 11:16:17 | INFO |   [粗排2] rrf=0.1120 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.7 直方图统计异常检测
+3.7.1 类别直方图
+使用分割网络输出测试集的分割结果，按照前文的定义计算直方图向量
+( ...
+2026-06-10 11:16:17 | INFO |   [粗排3] rrf=0.0327 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 率。 为了提升复杂场景下特征提取的效果， 不同于CSAD 对于局部学生网络和自
+编码器的设置[21]，本文使用了 CBA...
+2026-06-10 11:16:17 | INFO |   [粗排4] rrf=0.0201 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | millisecond-level latencies[C] . Proceedings of the IEEE/CVF...
+2026-06-10 11:16:17 | INFO |   [粗排5] rrf=0.0142 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | [13] Li C L, Sohn K, Yoon J, et al. Cutpaste: Self -supervis...
+2026-06-10 11:16:18 | INFO | After reranking: 5 results
+2026-06-10 11:16:18 | INFO | Hybrid search final: 5 results
+2026-06-10 11:16:18 | INFO |   [最终1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ..................................................
+2026-06-10 11:16:18 | INFO |   [最终2] score=0.0040 source=Unknown | N/A...
+2026-06-10 11:16:18 | INFO |   [最终3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..........................................................
+2026-06-10 11:16:18 | INFO |   [最终4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+...
+2026-06-10 11:16:18 | INFO |   [最终5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作...
+2026-06-10 11:16:18 | INFO | Knowledge base: 5 results
+2026-06-10 11:16:18 | INFO |   [精排1] score=0.0080 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.5 逻辑合成异常增强 ......................................................................
+2026-06-10 11:16:18 | INFO |   [精排2] score=0.0040 source=Unknown | ...
+2026-06-10 11:16:18 | INFO |   [精排3] score=0.0004 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..............................................................................
+2026-06-10 11:16:18 | INFO |   [精排4] score=0.0002 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+学制 4 入学日期 2021/09 毕业...
+2026-06-10 11:16:18 | INFO |   [精排5] score=0.0001 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作）
+学制 4 入学日期 2021/09 ...
+2026-06-10 11:16:18 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 11:16:18 | INFO | Retriever: building context
+2026-06-10 11:16:18 | INFO | _build_context: KB context length=2155, preview=[来源 1: 基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf] (相关度: 0.01)
+3.5 逻辑合成异常增强 ......................................................................................... 9
+3.6 损失函数 ..............................
+2026-06-10 11:16:18 | INFO | Retriever: context built, length=2165
+2026-06-10 11:16:18 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 11:16:18 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 11:16:18 | INFO | _should_finish result: True, retrieved_docs=3, web_results=0, iteration=2
+2026-06-10 11:16:18 | INFO | ReAct: conditions met for finishing
+2026-06-10 11:16:18 | INFO | ReAct: generating final answer
+2026-06-10 11:17:05 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 11:17:10 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 11:17:10 | INFO | Loaded document registry: 3 files
+2026-06-10 11:17:10 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 11:17:10 | INFO | Deduplication initialized
+2026-06-10 11:17:10 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 11:17:10 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 11:17:10 | INFO | BM25 index loaded: 75 documents
+2026-06-10 11:17:10 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 11:17:10 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 11:17:10 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 11:17:10 | INFO | DataProcessingTool 已注册
+2026-06-10 11:17:10 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 11:17:15 | INFO | CrossEncoder model loaded successfully
+2026-06-10 11:18:03 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 11:18:03 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 11:18:08 | INFO | MemoryManager initialized
+2026-06-10 11:18:08 | INFO | 记忆管理器已初始化
+2026-06-10 11:18:08 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 11:18:08 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 11:18:08 | INFO | Router: tools
+2026-06-10 11:18:08 | INFO | Route -> Tools (data processing)
+2026-06-10 11:18:08 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 11:18:08 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 11:19:49 | INFO | Tool data_processing: executed successfully
+2026-06-10 11:19:49 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 11:19:49 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 11:19:49 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 11:19:49 | INFO | 路径: tools
+2026-06-10 11:19:49 | INFO | [default] 回答: 本次数据分析共处理了200,000条原始数据，经过清洗后，删除了62列冗余信息，保留了89列关键特征。数据中连续型特征62个，类别型特征27个。经过好坏样本分析，共识别出176,868个有效样本，其中...
+2026-06-10 11:35:15 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 11:35:20 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 11:35:20 | INFO | Loaded document registry: 3 files
+2026-06-10 11:35:20 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 11:35:20 | INFO | Deduplication initialized
+2026-06-10 11:35:20 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 11:35:20 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 11:35:20 | INFO | BM25 index loaded: 75 documents
+2026-06-10 11:35:20 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 11:35:20 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 11:35:20 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 11:35:20 | INFO | DataProcessingTool 已注册
+2026-06-10 11:35:20 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 11:35:25 | INFO | CrossEncoder model loaded successfully
+2026-06-10 11:35:44 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 11:35:44 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 11:35:49 | INFO | MemoryManager initialized
+2026-06-10 11:35:49 | INFO | 记忆管理器已初始化
+2026-06-10 11:35:49 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 11:35:49 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 11:35:49 | INFO | Router: tools
+2026-06-10 11:35:49 | INFO | Route -> Tools (data processing)
+2026-06-10 11:35:49 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 11:35:49 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 11:37:52 | INFO | Tool data_processing: executed successfully
+2026-06-10 11:37:52 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 11:37:52 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 11:37:52 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 11:37:52 | INFO | 路径: tools
+2026-06-10 11:37:52 | INFO | [default] 回答: 在数据清洗阶段，我们对原始数据进行了处理，删除了62列冗余信息，最终保留了89列，包括62个连续型特征和27个类别型特征。清洗后的数据行数保持不变，为200,000行。在好坏样本分析中，我们发现好样本...
+2026-06-10 13:02:54 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 13:02:59 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 13:02:59 | INFO | Loaded document registry: 3 files
+2026-06-10 13:02:59 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 13:02:59 | INFO | Deduplication initialized
+2026-06-10 13:02:59 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 13:03:00 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 13:03:00 | INFO | BM25 index loaded: 75 documents
+2026-06-10 13:03:00 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 13:03:00 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 13:03:00 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 13:03:00 | INFO | DataProcessingTool 已注册
+2026-06-10 13:03:00 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 13:03:05 | INFO | CrossEncoder model loaded successfully
+2026-06-10 13:04:08 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 13:04:08 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 13:04:13 | INFO | MemoryManager initialized
+2026-06-10 13:04:13 | INFO | 记忆管理器已初始化
+2026-06-10 13:04:13 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 13:04:14 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 13:04:14 | INFO | Router: tools
+2026-06-10 13:04:14 | INFO | Route -> Tools (data processing)
+2026-06-10 13:04:14 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 13:04:14 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 13:07:01 | INFO | Tool data_processing: executed successfully
+2026-06-10 13:07:01 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 13:07:01 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 13:07:01 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 13:07:01 | INFO | 路径: tools
+2026-06-10 13:07:01 | INFO | [default] 回答: 本次数据分析处理了原始的200,000行数据，经过清洗后，删除了62列冗余信息，保留了89列关键特征，其中连续型特征62个，类别型特征27个。清洗后的数据中，包含缺失值的列有15列。在好坏样本分析中，...
+2026-06-10 13:17:10 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 13:17:17 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 13:17:17 | INFO | Loaded document registry: 3 files
+2026-06-10 13:17:17 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 13:17:17 | INFO | Deduplication initialized
+2026-06-10 13:17:17 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 13:17:18 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 13:17:18 | INFO | BM25 index loaded: 75 documents
+2026-06-10 13:17:18 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 13:17:18 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 13:17:18 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 13:17:18 | INFO | DataProcessingTool 已注册
+2026-06-10 13:17:18 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 13:17:25 | INFO | CrossEncoder model loaded successfully
+2026-06-10 13:20:50 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 13:20:55 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 13:20:55 | INFO | Loaded document registry: 3 files
+2026-06-10 13:20:55 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 13:20:55 | INFO | Deduplication initialized
+2026-06-10 13:20:55 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 13:20:55 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 13:20:55 | INFO | BM25 index loaded: 75 documents
+2026-06-10 13:20:55 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 13:20:55 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 13:20:55 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 13:20:55 | INFO | DataProcessingTool 已注册
+2026-06-10 13:20:56 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 13:21:01 | INFO | CrossEncoder model loaded successfully
+2026-06-10 13:22:14 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 13:22:14 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 13:22:19 | INFO | MemoryManager initialized
+2026-06-10 13:22:19 | INFO | 记忆管理器已初始化
+2026-06-10 13:22:19 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 13:22:19 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 13:22:19 | INFO | Router: tools
+2026-06-10 13:22:19 | INFO | Route -> Tools (data processing)
+2026-06-10 13:22:19 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 13:22:19 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 13:23:47 | INFO | Tool data_processing: executed successfully
+2026-06-10 13:23:47 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 13:23:47 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 13:23:47 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 13:23:47 | INFO | 路径: tools
+2026-06-10 13:23:47 | INFO | [default] 回答: 在数据清洗阶段，原始数据包含200,000行和151列，经过清洗后，行数保持不变，列数减少至89列，删除了部分冗余特征。清洗后数据包含62个连续型特征和27个类别型特征，共15列含有缺失值。在好坏样本...
+2026-06-10 13:23:47 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 13:23:47 | ERROR | 构建报告 iframe 失败: name 'urllib' is not defined
+2026-06-10 13:26:39 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 13:26:45 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 13:26:45 | INFO | Loaded document registry: 3 files
+2026-06-10 13:26:45 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 13:26:45 | INFO | Deduplication initialized
+2026-06-10 13:26:45 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 13:26:45 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 13:26:45 | INFO | BM25 index loaded: 75 documents
+2026-06-10 13:26:45 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 13:26:45 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 13:26:45 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 13:26:45 | INFO | DataProcessingTool 已注册
+2026-06-10 13:26:45 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 13:26:49 | INFO | CrossEncoder model loaded successfully
+2026-06-10 13:27:20 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 13:27:20 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 13:27:25 | INFO | MemoryManager initialized
+2026-06-10 13:27:25 | INFO | 记忆管理器已初始化
+2026-06-10 13:27:25 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 13:27:25 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 13:27:25 | INFO | Router: tools
+2026-06-10 13:27:25 | INFO | Route -> Tools (data processing)
+2026-06-10 13:27:25 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 13:27:25 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 13:28:58 | INFO | Tool data_processing: executed successfully
+2026-06-10 13:28:58 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 13:28:58 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 13:28:58 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 13:28:58 | INFO | 路径: tools
+2026-06-10 13:28:58 | INFO | [default] 回答: 本次数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。特征类型包括62个连续型和27个类别型。清洗后生成了CSV文件和HTML清洗...
+2026-06-10 13:28:58 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 13:43:23 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 13:43:30 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 13:43:30 | INFO | Loaded document registry: 3 files
+2026-06-10 13:43:30 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 13:43:30 | INFO | Deduplication initialized
+2026-06-10 13:43:30 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 13:43:30 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 13:43:30 | INFO | BM25 index loaded: 75 documents
+2026-06-10 13:43:30 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 13:43:30 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 13:43:30 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 13:43:30 | INFO | DataProcessingTool 已注册
+2026-06-10 13:43:30 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 13:43:39 | INFO | CrossEncoder model loaded successfully
+2026-06-10 14:17:09 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 14:17:10 | INFO | [Pure LLM] 无已启用工具
+2026-06-10 14:22:51 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 14:22:56 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 14:22:56 | INFO | Loaded document registry: 3 files
+2026-06-10 14:22:56 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 14:22:56 | INFO | Deduplication initialized
+2026-06-10 14:22:56 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 14:22:57 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 14:22:57 | INFO | BM25 index loaded: 75 documents
+2026-06-10 14:22:57 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 14:22:57 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 14:22:57 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 14:22:57 | INFO | DataProcessingTool 已注册
+2026-06-10 14:22:57 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 14:23:02 | INFO | CrossEncoder model loaded successfully
+2026-06-10 14:24:05 | INFO | [default] 用户提问：你是谁
+2026-06-10 14:24:05 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 14:24:10 | INFO | MemoryManager initialized
+2026-06-10 14:24:10 | INFO | 记忆管理器已初始化
+2026-06-10 14:24:10 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 14:24:11 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 14:24:11 | INFO | Router: pure_llm
+2026-06-10 14:24:11 | INFO | Route -> Pure LLM
+2026-06-10 14:24:11 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 14:24:11 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 14:24:14 | INFO | Generator producing response for: 你是谁...
+2026-06-10 14:24:14 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 14:24:14 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 14:24:14 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 14:24:14 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 14:24:14 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 14:24:19 | INFO | Generator: using generate_pure_llm
+2026-06-10 14:24:19 | INFO | Generator done, response length: 145
+2026-06-10 14:24:19 | INFO | 路径: pure_llm
+2026-06-10 14:24:19 | INFO | [default] 回答: 我是企业办公数据助手 AI Agent，专门为企业用户提供信息查询、数据分析等服务。我可以使用以下工具来帮助您：
+
+- **web_search**：搜索互联网获取最新信息。
+- **data_pro...
+2026-06-10 14:28:11 | INFO | [default] 用户提问：你能实现什么功能
+2026-06-10 14:28:11 | INFO | === Running Agent for query: 你能实现什么功能... ===
+2026-06-10 14:28:11 | INFO | Route: PURE_LLM (short query without question)
+2026-06-10 14:28:11 | INFO | Router: pure_llm
+2026-06-10 14:28:11 | INFO | Route -> Pure LLM
+2026-06-10 14:28:11 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 14:28:11 | INFO | Generator producing response for: 你能实现什么功能...
+2026-06-10 14:28:11 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 14:28:11 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 14:28:11 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 14:28:11 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 14:28:11 | INFO | generate_pure_llm: history turns=0, query_len=8
+2026-06-10 14:28:21 | INFO | Generator: using generate_pure_llm
+2026-06-10 14:28:21 | INFO | Generator done, response length: 291
+2026-06-10 14:28:21 | INFO | 路径: pure_llm
+2026-06-10 14:28:21 | INFO | [default] 回答: 您好！作为企业办公数据助手，我可以实现以下功能：
+
+1. **信息查询**：提供各种常识性问题、最新新闻、天气信息、股价查询等。
+2. **数据分析**：使用我的工具对数据进行分析，包括数据清洗、ED...
+2026-06-10 14:57:02 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 14:57:07 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 14:57:07 | INFO | Loaded document registry: 3 files
+2026-06-10 14:57:07 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 14:57:07 | INFO | Deduplication initialized
+2026-06-10 14:57:07 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 14:57:07 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 14:57:07 | INFO | BM25 index loaded: 75 documents
+2026-06-10 14:57:07 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 14:57:07 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 14:57:07 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 14:57:07 | INFO | DataProcessingTool 已注册
+2026-06-10 14:57:07 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 14:57:12 | INFO | CrossEncoder model loaded successfully
+2026-06-10 14:57:39 | INFO | [default] 用户提问：你是谁
+2026-06-10 14:57:39 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 14:57:44 | INFO | MemoryManager initialized
+2026-06-10 14:57:44 | INFO | 记忆管理器已初始化
+2026-06-10 14:57:44 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 14:57:44 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 14:57:44 | INFO | Router: pure_llm
+2026-06-10 14:57:44 | INFO | Route -> Pure LLM
+2026-06-10 14:57:44 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 14:57:44 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 14:57:48 | INFO | Generator producing response for: 你是谁...
+2026-06-10 14:57:48 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 14:57:48 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 14:57:48 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 14:57:48 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 14:57:48 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 14:57:54 | INFO | Generator: using generate_pure_llm
+2026-06-10 14:57:54 | INFO | Generator done, response length: 148
+2026-06-10 14:57:54 | INFO | 路径: pure_llm
+2026-06-10 14:57:54 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，拥有以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+同时，我可以使用以下工具：
+...
+2026-06-10 14:58:24 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 14:58:24 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 14:58:24 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 14:58:24 | INFO | Router: tools
+2026-06-10 14:58:24 | INFO | Route -> Tools (data processing)
+2026-06-10 14:58:24 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 14:59:52 | INFO | Tool data_processing: executed successfully
+2026-06-10 14:59:52 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 14:59:52 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 14:59:52 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 14:59:52 | INFO | 路径: tools
+2026-06-10 14:59:52 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 14:59:52 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 16:07:54 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 16:07:54 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 16:07:54 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 16:07:54 | INFO | Router: react
+2026-06-10 16:07:54 | INFO | Route -> ReAct Loop
+2026-06-10 16:07:54 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 16:07:54 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 16:07:54 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 16:07:54 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 16:08:00 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要检索或搜索最新的标签预测模型和方案。",
+    "next_action": "RETRIEVE",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "作为第一轮，需要从本地知识库中检索相关信息。"
+}
+```
+2026-06-10 16:08:00 | INFO | Decision: RETRIEVE - 作为第一轮，需要从本地知识库中检索相关信息。
+2026-06-10 16:08:00 | INFO | ReAct Retrieve: 标签预测 最新模型 方案...
+2026-06-10 16:08:00 | INFO | Retriever processing query: 标签预测 最新模型 方案...
+2026-06-10 16:08:00 | INFO | Retriever: starting knowledge base search
+2026-06-10 16:08:02 | ERROR | Knowledge base retrieval failed: Cannot send a request, as the client has been closed.
+2026-06-10 16:08:02 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 16:08:02 | INFO | Retriever: building context
+2026-06-10 16:08:02 | WARNING | _build_context: no search results!
+2026-06-10 16:08:02 | INFO | Retriever: context built, length=11
+2026-06-10 16:08:02 | INFO | Retriever done: 0 knowledge results, 0 web results
+2026-06-10 16:08:02 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 16:08:02 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 16:08:02 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 16:08:02 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 16:08:13 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息是本地知识库中的内容，但未找到与标签预测相关的最新模型或方案。",
+    "gap": "缺少关于标签预测最新模型和方案的具体信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "由于本地知识库中没有找到相关信息，需要通过联网搜索来获取最新的模型和方案信息。"
+}
+```
+2026-06-10 16:08:13 | INFO | Decision: WEB_SEARCH - 由于本地知识库中没有找到相关信息，需要通过联网搜索来获取最新的模型和方案信息。
+2026-06-10 16:08:13 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-10 16:08:15 | INFO | Tool web_search: executed successfully
+2026-06-10 16:08:15 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 16:08:15 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 16:08:15 | INFO | ReAct: conditions met for finishing
+2026-06-10 16:08:15 | INFO | ReAct: generating final answer
+2026-06-10 16:08:32 | INFO | ReAct: generated answer, 406 chars
+2026-06-10 16:08:32 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 16:08:32 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 16:08:32 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **自然语言生成模型结合的标签预测方法**：例如，CN116415548A专利中提出的方法，它利用自然语言生成模型生成多个构造，用于标签预测【网络...
+2026-06-10 16:20:22 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 16:22:29 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 16:23:07 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 16:23:12 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 16:23:12 | INFO | Loaded document registry: 3 files
+2026-06-10 16:23:12 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 16:23:12 | INFO | Deduplication initialized
+2026-06-10 16:23:12 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 16:23:12 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 16:23:12 | INFO | BM25 index loaded: 75 documents
+2026-06-10 16:23:12 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 16:23:12 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 16:23:12 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 16:23:12 | INFO | DataProcessingTool 已注册
+2026-06-10 16:23:12 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 16:23:17 | INFO | CrossEncoder model loaded successfully
+2026-06-10 16:25:04 | INFO | [default] 用户提问：你是谁
+2026-06-10 16:25:04 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 16:25:09 | INFO | MemoryManager initialized
+2026-06-10 16:25:09 | INFO | 记忆管理器已初始化
+2026-06-10 16:25:09 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 16:25:09 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 16:25:09 | INFO | Router: pure_llm
+2026-06-10 16:25:09 | INFO | Route -> Pure LLM
+2026-06-10 16:25:09 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 16:25:09 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 16:25:13 | INFO | Generator producing response for: 你是谁...
+2026-06-10 16:25:13 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 16:25:13 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 16:25:13 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 16:25:13 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 16:25:13 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 16:25:20 | INFO | Generator: using generate_pure_llm
+2026-06-10 16:25:20 | INFO | Generator done, response length: 168
+2026-06-10 16:25:20 | INFO | 路径: pure_llm
+2026-06-10 16:25:20 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，具备以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+同时，我可以使用以下工具：
+...
+2026-06-10 16:25:38 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 16:25:38 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 16:25:38 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 16:25:38 | INFO | Router: tools
+2026-06-10 16:25:38 | INFO | Route -> Tools (data processing)
+2026-06-10 16:25:38 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 16:29:27 | INFO | Tool data_processing: executed successfully
+2026-06-10 16:29:27 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 16:29:27 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 16:29:27 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 16:29:27 | INFO | 路径: tools
+2026-06-10 16:29:27 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 16:29:28 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 16:38:44 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 16:38:44 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 16:38:44 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 16:38:44 | INFO | Router: react
+2026-06-10 16:38:44 | INFO | Route -> ReAct Loop
+2026-06-10 16:38:44 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 16:38:44 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 16:38:44 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 16:38:44 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 16:38:48 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要获取关于这方面的标签预测的最新模型/方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "",
+    "reasoning": "作为第一轮，需要从本地知识库中检索相关信息。"
+}
+```
+2026-06-10 16:38:48 | INFO | Decision: RETRIEVE - 作为第一轮，需要从本地知识库中检索相关信息。
+2026-06-10 16:38:48 | INFO | ReAct Retrieve: ...
+2026-06-10 16:38:48 | INFO | Retriever processing query: ...
+2026-06-10 16:38:48 | INFO | Retriever: starting knowledge base search
+2026-06-10 16:38:54 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 16:38:54 | INFO | Loaded document registry: 3 files
+2026-06-10 16:38:54 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 16:38:54 | INFO | Deduplication initialized
+2026-06-10 16:38:54 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 16:38:54 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 16:38:54 | INFO | BM25 index loaded: 75 documents
+2026-06-10 16:38:56 | INFO | Vector retrieval: 30 candidates
+2026-06-10 16:38:56 | INFO | BM25 search: query='...', found 0 results
+2026-06-10 16:38:56 | INFO | BM25 retrieval: 0 candidates
+2026-06-10 16:38:56 | INFO | RRF fusion: 2 result sets, 17 unique docs, top 17 returned
+2026-06-10 16:38:56 | INFO | RRF fusion: 17 fused results
+2026-06-10 16:38:56 | INFO |   [粗排1] rrf=0.0439 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+18
+图 4-4 良好训练样本的平均类别直方图
+PCB 板异常测试样本的原始图像如图 4-...
+2026-06-10 16:38:56 | INFO |   [粗排2] rrf=0.0192 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 消失与退化的问题，方法是对于每一个残差块，在传统的假设函数上加一个跳跃
+连接将输入加到输出上。对于层数较深的版本，引入瓶...
+2026-06-10 16:38:56 | INFO |   [粗排3] rrf=0.0159 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | unsupervised anomaly detection[C] . Proceedings of the  Inte...
+2026-06-10 16:38:56 | INFO |   [粗排4] rrf=0.0156 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | millisecond-level latencies[C] . Proceedings of the IEEE/CVF...
+2026-06-10 16:38:56 | INFO |   [粗排5] rrf=0.0133 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4.4 实验结果 ......................................................
+2026-06-10 16:39:04 | INFO | After reranking: 5 results
+2026-06-10 16:39:04 | INFO | Hybrid search final: 5 results
+2026-06-10 16:39:04 | INFO |   [最终1] score=0.2319 source=202100700110WHBFZZWCJDZG.pdf | 2021 Ⅰ 学术英语（1） 必修 6.0 160 87
+2021 Ⅱ 大学生心理健康教育 必修 2.0 32 79
+2...
+2026-06-10 16:39:04 | INFO |   [最终2] score=0.0527 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 16:39:04 | INFO |   [最终3] score=0.0371 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-10 16:39:04 | INFO |   [最终4] score=0.0266 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作...
+2026-06-10 16:39:04 | INFO |   [最终5] score=0.0223 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..........................................................
+2026-06-10 16:39:04 | INFO | Knowledge base: 5 results
+2026-06-10 16:39:04 | INFO |   [精排1] score=0.2319 source=202100700110WHBFZZWCJDZG.pdf | 2021 Ⅰ 学术英语（1） 必修 6.0 160 87
+2021 Ⅱ 大学生心理健康教育 必修 2.0 32 79
+2021 Ⅱ 电磁学 必修 3.0 48 ...
+2026-06-10 16:39:04 | INFO |   [精排2] score=0.0527 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-10 16:39:04 | INFO |   [精排3] score=0.0371 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-10 16:39:04 | INFO |   [精排4] score=0.0266 source=202100700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 202100700110 性别 男
+学院名称 山东大学澳国立联合理学院 专业名称 应用物理学（中外合作）
+学制 4 入学日期 2021/09 ...
+2026-06-10 16:39:04 | INFO |   [精排5] score=0.0223 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 4 实验 ..............................................................................
+2026-06-10 16:39:04 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 16:39:04 | INFO | Retriever: building context
+2026-06-10 16:39:04 | INFO | _build_context: KB context length=2736, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.23)
+2021 Ⅰ 学术英语（1） 必修 6.0 160 87
+2021 Ⅱ 大学生心理健康教育 必修 2.0 32 79
+2021 Ⅱ 电磁学 必修 3.0 48 73
+2021 Ⅱ 高等数学Ⅰ(2) 必修 5.0 80 83
+2021 Ⅱ 基础物理实验（2） 必修 2.0 64 94
+2021 Ⅱ 力学...
+2026-06-10 16:39:04 | INFO | Retriever: context built, length=2746
+2026-06-10 16:39:04 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 16:39:04 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 16:39:04 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 16:39:04 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 16:39:04 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 16:39:04 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 16:39:10 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程设置和评分的，与用户提出的问题关于标签预测的最新模型/方案无关。这些信息不能充分回答用户的问题。",
+    "gap": "缺少关于标签预测的最新模型/方案的信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型/方案",
+    "reasoning": "需要通过联网搜索来获取关于标签预测的最新模型和方案的信息。"
+}
+```
+2026-06-10 16:39:10 | INFO | Decision: WEB_SEARCH - 需要通过联网搜索来获取关于标签预测的最新模型和方案的信息。
+2026-06-10 16:39:10 | INFO | ReAct WebSearch: 标签预测 最新模型/方案...
+2026-06-10 16:39:12 | INFO | Tool web_search: executed successfully
+2026-06-10 16:39:12 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 16:39:12 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 16:39:12 | INFO | ReAct: conditions met for finishing
+2026-06-10 16:39:12 | INFO | ReAct: generating final answer
+2026-06-10 16:39:30 | INFO | ReAct: generated answer, 472 chars
+2026-06-10 16:39:30 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 16:39:30 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 16:39:30 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **自然语言生成模型**：一种涉及自然语言处理领域的标签预测模型，通过利用自然语言生成模型生成多个构造来提高预测效果【网络信息来源：Google ...

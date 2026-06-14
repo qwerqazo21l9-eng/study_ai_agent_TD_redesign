@@ -1,0 +1,1154 @@
+2026-06-10 16:52:12 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 16:52:17 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 16:52:17 | INFO | Loaded document registry: 3 files
+2026-06-10 16:52:17 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 16:52:17 | INFO | Deduplication initialized
+2026-06-10 16:52:17 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 16:52:17 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 16:52:17 | INFO | BM25 index loaded: 75 documents
+2026-06-10 16:52:17 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 16:52:17 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 16:52:17 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 16:52:17 | INFO | DataProcessingTool 已注册
+2026-06-10 16:52:17 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 16:52:27 | INFO | CrossEncoder model loaded successfully
+2026-06-10 17:04:56 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 17:05:02 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:05:02 | INFO | Loaded document registry: 3 files
+2026-06-10 17:05:02 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:05:02 | INFO | Deduplication initialized
+2026-06-10 17:05:02 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:05:02 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:05:02 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:05:02 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 17:05:02 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 17:05:02 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 17:05:02 | INFO | DataProcessingTool 已注册
+2026-06-10 17:05:02 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 17:05:07 | INFO | CrossEncoder model loaded successfully
+2026-06-10 17:05:48 | INFO | [default] 用户提问：你是谁
+2026-06-10 17:05:48 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 17:05:54 | INFO | MemoryManager initialized
+2026-06-10 17:05:54 | INFO | 记忆管理器已初始化
+2026-06-10 17:05:54 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 17:05:54 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 17:05:54 | INFO | Router: pure_llm
+2026-06-10 17:05:54 | INFO | Route -> Pure LLM
+2026-06-10 17:05:54 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 17:05:54 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 17:05:57 | INFO | Generator producing response for: 你是谁...
+2026-06-10 17:05:57 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 17:05:57 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 17:05:57 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 17:05:57 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 17:05:57 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 17:06:03 | INFO | Generator: using generate_pure_llm
+2026-06-10 17:06:03 | INFO | Generator done, response length: 148
+2026-06-10 17:06:03 | INFO | 路径: pure_llm
+2026-06-10 17:06:03 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，拥有以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+同时，我可以使用以下工具：
+...
+2026-06-10 17:06:11 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 17:06:11 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 17:06:11 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 17:06:11 | INFO | Router: tools
+2026-06-10 17:06:11 | INFO | Route -> Tools (data processing)
+2026-06-10 17:06:11 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 17:08:31 | INFO | Tool data_processing: executed successfully
+2026-06-10 17:08:31 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 17:08:31 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 17:08:31 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 17:08:31 | INFO | 路径: tools
+2026-06-10 17:08:31 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 17:08:31 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 17:08:49 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 17:08:49 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:08:49 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 17:08:49 | INFO | Router: react
+2026-06-10 17:08:49 | INFO | Route -> ReAct Loop
+2026-06-10 17:08:49 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 17:08:49 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:08:49 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 17:08:49 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 17:08:54 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要获取关于这方面的标签预测的最新模型/方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "",
+    "reasoning": "作为第一轮，需要从本地知识库检索相关信息。"
+}
+```
+2026-06-10 17:08:54 | INFO | Decision: RETRIEVE - 作为第一轮，需要从本地知识库检索相关信息。
+2026-06-10 17:08:54 | INFO | ReAct Retrieve: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:08:54 | INFO | Retriever processing query: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:08:54 | INFO | Retriever: starting knowledge base search
+2026-06-10 17:08:59 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:08:59 | INFO | Loaded document registry: 3 files
+2026-06-10 17:08:59 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:08:59 | INFO | Deduplication initialized
+2026-06-10 17:08:59 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:08:59 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:08:59 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:09:01 | INFO | Vector retrieval: 30 candidates
+2026-06-10 17:09:03 | INFO | BM25 search: query='这方面的标签预测，目前学界最新的模型/方案有哪些...', found 30 results
+2026-06-10 17:09:03 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 17:09:03 | INFO | RRF fusion: 2 result sets, 8 unique docs, top 8 returned
+2026-06-10 17:09:03 | INFO | RRF fusion: 8 fused results
+2026-06-10 17:09:03 | INFO |   [粗排1] rrf=0.2333 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+22
+致    谢
+感谢金长龙导师，以严谨认真的学术态度耐心地指导我阅读领域内的相关文
+献...
+2026-06-10 17:09:03 | INFO |   [粗排2] rrf=0.1192 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:09:03 | INFO |   [粗排3] rrf=0.0188 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:09:03 | INFO |   [粗排4] rrf=0.0077 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:09:03 | INFO |   [粗排5] rrf=0.0063 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:09:07 | INFO | After reranking: 5 results
+2026-06-10 17:09:07 | INFO | Hybrid search final: 5 results
+2026-06-10 17:09:07 | INFO |   [最终1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-10 17:09:07 | INFO |   [最终2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:09:07 | INFO |   [最终3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:09:07 | INFO |   [最终4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:09:07 | INFO |   [最终5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:09:07 | INFO | Knowledge base: 5 results
+2026-06-10 17:09:07 | INFO |   [精排1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-10 17:09:07 | INFO |   [精排2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-10 17:09:07 | INFO |   [精排3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-10 17:09:07 | INFO |   [精排4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的细粒度掩码，筛选方法是将细
+粒度的每个组...
+2026-06-10 17:09:07 | INFO |   [精排5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然而，考虑所有点之间的 MRD 将需
+要很...
+2026-06-10 17:09:07 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 17:09:07 | INFO | Retriever: building context
+2026-06-10 17:09:07 | INFO | _build_context: KB context length=2530, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.16)
+2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 64 74
+2022 Ⅱ 马克思主义基本原理 必修 3.0 48 84
+2022 Ⅱ 凝聚态物理（ANU） 必修 2.0 32 88
+2022...
+2026-06-10 17:09:07 | INFO | Retriever: context built, length=2540
+2026-06-10 17:09:07 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 17:09:07 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 17:09:07 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 17:09:07 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 17:09:07 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 17:09:07 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 17:09:13 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程和教材的列表，与用户提出的标签预测的最新模型/方案无关。这些信息不能充分回答用户的问题。",
+    "gap": "需要关于标签预测的最新模型和方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "由于当前信息与用户问题不相关，需要从本地知识库检索相关信息。"
+}
+```
+2026-06-10 17:09:13 | INFO | Decision: RETRIEVE - 由于当前信息与用户问题不相关，需要从本地知识库检索相关信息。
+2026-06-10 17:09:13 | INFO | Force: override RETRIEVE to WEB_SEARCH (needs_web + has_local_docs + no_web_results)
+2026-06-10 17:09:13 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-10 17:09:15 | INFO | Tool web_search: executed successfully
+2026-06-10 17:09:15 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 17:09:15 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 17:09:15 | INFO | ReAct: conditions met for finishing
+2026-06-10 17:09:15 | INFO | ReAct: generating final answer
+2026-06-10 17:09:31 | INFO | ReAct: generated answer, 440 chars
+2026-06-10 17:09:31 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 17:09:31 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 17:09:31 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **标签预测模型的训练方法及装置**：这是一种基于专利的标签预测模型，具体方法及装置在CN116415548A专利中有详细描述【网络信息】。
+
+2...
+2026-06-10 17:16:29 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 17:16:35 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:16:35 | INFO | Loaded document registry: 3 files
+2026-06-10 17:16:35 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:16:35 | INFO | Deduplication initialized
+2026-06-10 17:16:35 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:16:35 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:16:35 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:16:35 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 17:16:35 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 17:16:35 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 17:16:35 | INFO | DataProcessingTool 已注册
+2026-06-10 17:16:36 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 17:16:45 | INFO | CrossEncoder model loaded successfully
+2026-06-10 17:18:25 | INFO | [default] 用户提问：你是谁
+2026-06-10 17:18:25 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 17:18:31 | INFO | MemoryManager initialized
+2026-06-10 17:18:31 | INFO | 记忆管理器已初始化
+2026-06-10 17:18:31 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 17:18:31 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 17:18:31 | INFO | Router: pure_llm
+2026-06-10 17:18:31 | INFO | Route -> Pure LLM
+2026-06-10 17:18:31 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 17:18:31 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 17:18:34 | INFO | Generator producing response for: 你是谁...
+2026-06-10 17:18:34 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 17:18:34 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 17:18:34 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 17:18:34 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 17:18:34 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 17:18:43 | INFO | Generator: using generate_pure_llm
+2026-06-10 17:18:43 | INFO | Generator done, response length: 233
+2026-06-10 17:18:43 | INFO | 路径: pure_llm
+2026-06-10 17:18:43 | INFO | [default] 回答: 我是企业办公数据助手 AI Agent，具备以下能力：
+
+- RAG 检索增强生成：从知识库中检索相关内容，结合检索结果生成答案。
+- ReAct 推理循环：进行多步推理，逐步推理出最终答案。
+- 联...
+2026-06-10 17:23:00 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 17:23:00 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 17:23:00 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 17:23:00 | INFO | Router: tools
+2026-06-10 17:23:00 | INFO | Route -> Tools (data processing)
+2026-06-10 17:23:00 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 17:27:06 | INFO | Tool data_processing: executed successfully
+2026-06-10 17:27:06 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 17:27:06 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 17:27:06 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 17:27:06 | INFO | 路径: tools
+2026-06-10 17:27:06 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-10 17:27:06 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 17:30:37 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 17:30:37 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:30:37 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 17:30:37 | INFO | Router: react
+2026-06-10 17:30:37 | INFO | Route -> ReAct Loop
+2026-06-10 17:30:37 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 17:30:37 | INFO | [ReAct] injected history_summary len=0 preview=''
+2026-06-10 17:30:37 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:30:37 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 17:30:37 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 17:30:44 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要获取关于这方面的标签预测的最新模型/方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "",
+    "reasoning": "由于没有收集到任何信息，需要从本地知识库检索相关信息。"
+}
+```
+2026-06-10 17:30:44 | INFO | Decision: RETRIEVE - 由于没有收集到任何信息，需要从本地知识库检索相关信息。
+2026-06-10 17:30:44 | INFO | ReAct Retrieve: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:30:44 | INFO | Retriever processing query: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:30:44 | INFO | Retriever: starting knowledge base search
+2026-06-10 17:30:49 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:30:49 | INFO | Loaded document registry: 3 files
+2026-06-10 17:30:49 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:30:49 | INFO | Deduplication initialized
+2026-06-10 17:30:49 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:30:49 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:30:49 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:30:52 | INFO | Vector retrieval: 30 candidates
+2026-06-10 17:30:52 | INFO | BM25 search: query='这方面的标签预测，目前学界最新的模型/方案有哪些...', found 30 results
+2026-06-10 17:30:52 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 17:30:52 | INFO | RRF fusion: 2 result sets, 8 unique docs, top 8 returned
+2026-06-10 17:30:52 | INFO | RRF fusion: 8 fused results
+2026-06-10 17:30:52 | INFO |   [粗排1] rrf=0.2333 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+22
+致    谢
+感谢金长龙导师，以严谨认真的学术态度耐心地指导我阅读领域内的相关文
+献...
+2026-06-10 17:30:52 | INFO |   [粗排2] rrf=0.1192 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:30:52 | INFO |   [粗排3] rrf=0.0188 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:30:52 | INFO |   [粗排4] rrf=0.0077 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:30:52 | INFO |   [粗排5] rrf=0.0063 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:30:53 | INFO | After reranking: 5 results
+2026-06-10 17:30:53 | INFO | Hybrid search final: 5 results
+2026-06-10 17:30:53 | INFO |   [最终1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-10 17:30:53 | INFO |   [最终2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:30:53 | INFO |   [最终3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:30:53 | INFO |   [最终4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:30:53 | INFO |   [最终5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:30:53 | INFO | Knowledge base: 5 results
+2026-06-10 17:30:53 | INFO |   [精排1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-10 17:30:53 | INFO |   [精排2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-10 17:30:53 | INFO |   [精排3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-10 17:30:53 | INFO |   [精排4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的细粒度掩码，筛选方法是将细
+粒度的每个组...
+2026-06-10 17:30:53 | INFO |   [精排5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然而，考虑所有点之间的 MRD 将需
+要很...
+2026-06-10 17:30:53 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 17:30:53 | INFO | Retriever: building context
+2026-06-10 17:30:53 | INFO | _build_context: KB context length=2530, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.16)
+2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 64 74
+2022 Ⅱ 马克思主义基本原理 必修 3.0 48 84
+2022 Ⅱ 凝聚态物理（ANU） 必修 2.0 32 88
+2022...
+2026-06-10 17:30:53 | INFO | Retriever: context built, length=2540
+2026-06-10 17:30:53 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 17:30:53 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 17:30:53 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 17:30:53 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 17:30:53 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 17:30:53 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 17:31:01 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程和教材的列表，这些信息与用户的问题无关，因此不能充分回答用户关于标签预测的最新模型/方案的问题。",
+    "gap": "缺少关于标签预测的最新模型/方案的具体信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "由于当前信息与用户问题无关，需要通过联网搜索来获取相关领域的最新信息。"
+}
+```
+2026-06-10 17:31:01 | INFO | Decision: WEB_SEARCH - 由于当前信息与用户问题无关，需要通过联网搜索来获取相关领域的最新信息。
+2026-06-10 17:31:01 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-10 17:31:03 | INFO | Tool web_search: executed successfully
+2026-06-10 17:31:03 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 17:31:03 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 17:31:03 | INFO | ReAct: conditions met for finishing
+2026-06-10 17:31:03 | INFO | ReAct: generating final answer
+2026-06-10 17:31:22 | INFO | ReAct: generated answer, 434 chars
+2026-06-10 17:31:22 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 17:31:22 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 17:31:22 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **标签预测模型的训练方法及装置**：这是一种专利技术，涉及标签预测模型的训练方法及装置，但具体细节未在摘要中提供【网络信息】。
+
+2. **20...
+2026-06-10 17:37:43 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 17:37:48 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:37:48 | INFO | Loaded document registry: 3 files
+2026-06-10 17:37:48 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:37:48 | INFO | Deduplication initialized
+2026-06-10 17:37:48 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:37:48 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:37:48 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:37:48 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 17:37:48 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 17:37:48 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 17:37:48 | INFO | DataProcessingTool 已注册
+2026-06-10 17:37:48 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 17:37:53 | INFO | CrossEncoder model loaded successfully
+2026-06-10 17:38:27 | INFO | [default] 用户提问：你是谁
+2026-06-10 17:38:27 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 17:38:32 | INFO | MemoryManager initialized
+2026-06-10 17:38:32 | INFO | 记忆管理器已初始化
+2026-06-10 17:38:32 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 17:38:32 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 17:38:32 | INFO | Router: pure_llm
+2026-06-10 17:38:32 | INFO | Route -> Pure LLM
+2026-06-10 17:38:32 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 17:38:32 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 17:38:36 | INFO | Generator producing response for: 你是谁...
+2026-06-10 17:38:36 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 17:38:36 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 17:38:36 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 17:38:36 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 17:38:36 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 17:38:42 | INFO | Generator: using generate_pure_llm
+2026-06-10 17:38:42 | INFO | Generator done, response length: 148
+2026-06-10 17:38:42 | INFO | 路径: pure_llm
+2026-06-10 17:38:42 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，拥有以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+同时，我可以使用以下工具：
+...
+2026-06-10 17:38:50 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 17:38:50 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 17:38:50 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 17:38:50 | INFO | Router: tools
+2026-06-10 17:38:50 | INFO | Route -> Tools (data processing)
+2026-06-10 17:38:50 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 17:40:36 | INFO | Tool data_processing: executed successfully
+2026-06-10 17:40:36 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 17:40:36 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 17:40:36 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 17:40:36 | INFO | 路径: tools
+2026-06-10 17:40:36 | INFO | [default] 回答: 本次数据分析处理了原始数据200,000行，共151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分冗余特征。清洗后数据包含62个连续型特征和27个类别型特征，其中15列含有缺失值。在好...
+2026-06-10 17:40:36 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 17:42:59 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 17:42:59 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:42:59 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 17:42:59 | INFO | Router: react
+2026-06-10 17:42:59 | INFO | Route -> ReAct Loop
+2026-06-10 17:42:59 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 17:42:59 | ERROR | Failed to retrieve memories: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\third-party\faiss\faiss\impl\io.cpp:70: Error: 'f' failed: could not open vector_db\memory_index\index.faiss for reading: No such file or directory
+2026-06-10 17:42:59 | INFO | [ReAct] injected history_summary len=0 preview=''
+2026-06-10 17:42:59 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:42:59 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 17:42:59 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 17:43:07 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要获取关于这方面的标签预测的最新模型和方案。",
+    "next_action": "RETRIEVE",
+    "action_input": "这方面的标签预测最新模型/方案",
+    "reasoning": "作为第一轮，需要从本地知识库检索相关信息。"
+}
+```
+2026-06-10 17:43:07 | INFO | Decision: RETRIEVE - 作为第一轮，需要从本地知识库检索相关信息。
+2026-06-10 17:43:07 | INFO | ReAct Retrieve: 这方面的标签预测最新模型/方案...
+2026-06-10 17:43:07 | INFO | Retriever processing query: 这方面的标签预测最新模型/方案...
+2026-06-10 17:43:07 | INFO | Retriever: starting knowledge base search
+2026-06-10 17:43:12 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:43:12 | INFO | Loaded document registry: 3 files
+2026-06-10 17:43:12 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:43:12 | INFO | Deduplication initialized
+2026-06-10 17:43:12 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:43:12 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:43:12 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:43:15 | INFO | Vector retrieval: 30 candidates
+2026-06-10 17:43:16 | INFO | BM25 search: query='这方面的标签预测最新模型/方案...', found 30 results
+2026-06-10 17:43:16 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 17:43:16 | INFO | RRF fusion: 2 result sets, 11 unique docs, top 11 returned
+2026-06-10 17:43:16 | INFO | RRF fusion: 11 fused results
+2026-06-10 17:43:16 | INFO |   [粗排1] rrf=0.2010 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+15
+4 实验
+4.1 数据集概述
+本文使用两种工业中常见的场景来测试模型性能，轮胎 X ...
+2026-06-10 17:43:16 | INFO |   [粗排2] rrf=0.1255 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 征微弱或复杂场景下的缺陷，传统的检测方法无法满足需求。近年来随着深度学
+习的快速发展，基于深度学习的异常检测技术日渐成为...
+2026-06-10 17:43:16 | INFO |   [粗排3] rrf=0.0189 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.1 语义伪标签掩码 ...................................................
+2026-06-10 17:43:16 | INFO |   [粗排4] rrf=0.0118 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | [15] Liu S, Zeng Z, Ren T,  et al. Grounding DINO: Marrying ...
+2026-06-10 17:43:16 | INFO |   [粗排5] rrf=0.0072 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:43:27 | INFO | After reranking: 5 results
+2026-06-10 17:43:27 | INFO | Hybrid search final: 5 results
+2026-06-10 17:43:27 | INFO |   [最终1] score=0.0140 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 征微弱或复杂场景下的缺陷，传统的检测方法无法满足需求。近年来随着深度学
+习的快速发展，基于深度学习的异常检测技术日渐成为...
+2026-06-10 17:43:27 | INFO |   [最终2] score=0.0108 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:43:27 | INFO |   [最终3] score=0.0030 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+...
+2026-06-10 17:43:27 | INFO |   [最终4] score=0.0023 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+15
+4 实验
+4.1 数据集概述
+本文使用两种工业中常见的场景来测试模型性能，轮胎 X ...
+2026-06-10 17:43:27 | INFO |   [最终5] score=0.0012 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.1 语义伪标签掩码 ...................................................
+2026-06-10 17:43:27 | INFO | Knowledge base: 5 results
+2026-06-10 17:43:27 | INFO |   [精排1] score=0.0140 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 征微弱或复杂场景下的缺陷，传统的检测方法无法满足需求。近年来随着深度学
+习的快速发展，基于深度学习的异常检测技术日渐成为主流，按照训练方式可以
+分为监督学习和无...
+2026-06-10 17:43:27 | INFO |   [精排2] score=0.0108 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-10 17:43:27 | INFO |   [精排3] score=0.0030 source=2021F0700110WHBFZZWCJDZG.pdf | 姓名 曲扬 学号 2021F0700110 性别 男
+学院名称 机电与信息工程学院 专业名称 计算机科学与技术（辅修）
+学制 4 入学日期 2021/09 毕业...
+2026-06-10 17:43:27 | INFO |   [精排4] score=0.0023 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+15
+4 实验
+4.1 数据集概述
+本文使用两种工业中常见的场景来测试模型性能，轮胎 X 光检测数据集和
+pcb 板数据集，分别代...
+2026-06-10 17:43:27 | INFO |   [精排5] score=0.0012 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.1 语义伪标签掩码 .......................................................................
+2026-06-10 17:43:27 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 17:43:27 | INFO | Retriever: building context
+2026-06-10 17:43:27 | INFO | _build_context: KB context length=2676, preview=[来源 1: 基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf] (相关度: 0.01)
+征微弱或复杂场景下的缺陷，传统的检测方法无法满足需求。近年来随着深度学
+习的快速发展，基于深度学习的异常检测技术日渐成为主流，按照训练方式可以
+分为监督学习和无监督学习，有监督学习适用于缺陷种类已知，需要对缺陷进行
+多分类，以及容易获得大量低成本标注训练数据的任务，并且能产生良好的...
+2026-06-10 17:43:27 | INFO | Retriever: context built, length=2686
+2026-06-10 17:43:27 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 17:43:27 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 17:43:27 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 17:43:27 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 17:43:27 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 17:43:27 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 17:43:34 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要涉及基于深度学习的异常检测技术，包括监督学习和无监督学习。这些信息提到了无监督学习在工业场景中的应用，但并未具体提及最新的模型或方案。",
+    "gap": "缺少关于目前学界最新的标签预测模型/方案的具体信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "最新的标签预测模型/方案",
+    "reasoning": "由于当前信息中没有提到具体的最新模型或方案，需要通过联网搜索来获取这方面的最新信息。"
+}
+```
+2026-06-10 17:43:34 | INFO | Decision: WEB_SEARCH - 由于当前信息中没有提到具体的最新模型或方案，需要通过联网搜索来获取这方面的最新信息。
+2026-06-10 17:43:34 | INFO | ReAct WebSearch: 最新的标签预测模型/方案...
+2026-06-10 17:43:36 | INFO | Tool web_search: executed successfully
+2026-06-10 17:43:36 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 17:43:36 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 17:43:36 | INFO | ReAct: conditions met for finishing
+2026-06-10 17:43:36 | INFO | ReAct: generating final answer
+2026-06-10 17:43:48 | INFO | ReAct: generated answer, 368 chars
+2026-06-10 17:43:48 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 17:43:48 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 17:43:48 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. 一种基于用户关注行为的标签预测方法：该方法使用用户关注行为的特征矩阵来预测行业标签，最大预测准确率可达0.657【网络信息】。
+
+2. 基于离线标...
+2026-06-10 17:51:19 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 17:51:25 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:51:25 | INFO | Loaded document registry: 3 files
+2026-06-10 17:51:25 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:51:25 | INFO | Deduplication initialized
+2026-06-10 17:51:25 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:51:25 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:51:25 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:51:25 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 17:51:25 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 17:51:25 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 17:51:25 | INFO | DataProcessingTool 已注册
+2026-06-10 17:51:26 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 17:51:34 | INFO | CrossEncoder model loaded successfully
+2026-06-10 17:53:13 | INFO | [default] 用户提问：你是谁
+2026-06-10 17:53:13 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 17:53:18 | INFO | MemoryManager initialized
+2026-06-10 17:53:18 | INFO | 记忆管理器已初始化
+2026-06-10 17:53:18 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 17:53:18 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 17:53:18 | INFO | Router: pure_llm
+2026-06-10 17:53:18 | INFO | Route -> Pure LLM
+2026-06-10 17:53:19 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 17:53:19 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 17:53:22 | INFO | Generator producing response for: 你是谁...
+2026-06-10 17:53:22 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 17:53:22 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 17:53:22 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 17:53:22 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 17:53:22 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 17:53:31 | INFO | Generator: using generate_pure_llm
+2026-06-10 17:53:31 | INFO | Generator done, response length: 206
+2026-06-10 17:53:31 | INFO | 路径: pure_llm
+2026-06-10 17:53:31 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，专门为企业用户提供办公相关的信息查询、数据分析等服务。我的能力包括：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Sea...
+2026-06-10 17:53:59 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 17:53:59 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 17:53:59 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 17:53:59 | INFO | Router: tools
+2026-06-10 17:53:59 | INFO | Route -> Tools (data processing)
+2026-06-10 17:53:59 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 17:57:28 | INFO | Tool data_processing: executed successfully
+2026-06-10 17:57:28 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 17:57:28 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 17:57:28 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 17:57:28 | INFO | 路径: tools
+2026-06-10 17:57:28 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，但列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值...
+2026-06-10 17:57:28 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 17:57:57 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 17:57:57 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:57:57 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 17:57:57 | INFO | Router: react
+2026-06-10 17:57:57 | INFO | Route -> ReAct Loop
+2026-06-10 17:57:57 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 17:57:57 | ERROR | Failed to retrieve memories: Error in __cdecl faiss::FileIOReader::FileIOReader(const char *) at D:\a\faiss-wheels\faiss-wheels\third-party\faiss\faiss\impl\io.cpp:70: Error: 'f' failed: could not open vector_db\memory_index\index.faiss for reading: No such file or directory
+2026-06-10 17:57:57 | INFO | [ReAct] injected history_summary len=901 preview='【当前对话】\n用户：你是谁\n助手：您好！我是企业办公数据助手 AI Agent，专门为企业用户提供办公相关的信息查询、数据分析等服务。我的能力包括：\n\n- RAG 检索增强生成\n- ReAct 推理循环\n- 联网搜索 (Web Search)\n- 数据处理\n\n同时，我还可以使用以下工具：\n\n- web_search：搜索互联网获取最新信息。\n- data_processing：对 CSV 表格执行'
+2026-06-10 17:57:57 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 17:57:57 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 17:57:57 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 17:58:04 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要获取关于这方面的标签预测的最新模型/方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "",
+    "reasoning": "由于没有收集到任何信息，需要从本地知识库中检索相关信息。"
+}
+```
+2026-06-10 17:58:04 | INFO | Decision: RETRIEVE - 由于没有收集到任何信息，需要从本地知识库中检索相关信息。
+2026-06-10 17:58:04 | INFO | ReAct Retrieve: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:58:04 | INFO | Retriever processing query: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 17:58:04 | INFO | Retriever: starting knowledge base search
+2026-06-10 17:58:09 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 17:58:09 | INFO | Loaded document registry: 3 files
+2026-06-10 17:58:09 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 17:58:09 | INFO | Deduplication initialized
+2026-06-10 17:58:09 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 17:58:09 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 17:58:09 | INFO | BM25 index loaded: 75 documents
+2026-06-10 17:58:12 | INFO | Vector retrieval: 30 candidates
+2026-06-10 17:58:12 | INFO | BM25 search: query='这方面的标签预测，目前学界最新的模型/方案有哪些...', found 30 results
+2026-06-10 17:58:12 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 17:58:12 | INFO | RRF fusion: 2 result sets, 8 unique docs, top 8 returned
+2026-06-10 17:58:12 | INFO | RRF fusion: 8 fused results
+2026-06-10 17:58:12 | INFO |   [粗排1] rrf=0.2333 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+22
+致    谢
+感谢金长龙导师，以严谨认真的学术态度耐心地指导我阅读领域内的相关文
+献...
+2026-06-10 17:58:12 | INFO |   [粗排2] rrf=0.1192 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:58:12 | INFO |   [粗排3] rrf=0.0188 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:58:12 | INFO |   [粗排4] rrf=0.0077 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:58:12 | INFO |   [粗排5] rrf=0.0063 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:58:14 | INFO | After reranking: 5 results
+2026-06-10 17:58:14 | INFO | Hybrid search final: 5 results
+2026-06-10 17:58:14 | INFO |   [最终1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-10 17:58:14 | INFO |   [最终2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 17:58:14 | INFO |   [最终3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 17:58:14 | INFO |   [最终4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 17:58:14 | INFO |   [最终5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 17:58:14 | INFO | Knowledge base: 5 results
+2026-06-10 17:58:14 | INFO |   [精排1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-10 17:58:14 | INFO |   [精排2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-10 17:58:14 | INFO |   [精排3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-10 17:58:14 | INFO |   [精排4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的细粒度掩码，筛选方法是将细
+粒度的每个组...
+2026-06-10 17:58:14 | INFO |   [精排5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然而，考虑所有点之间的 MRD 将需
+要很...
+2026-06-10 17:58:14 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 17:58:14 | INFO | Retriever: building context
+2026-06-10 17:58:14 | INFO | _build_context: KB context length=2530, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.16)
+2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 64 74
+2022 Ⅱ 马克思主义基本原理 必修 3.0 48 84
+2022 Ⅱ 凝聚态物理（ANU） 必修 2.0 32 88
+2022...
+2026-06-10 17:58:14 | INFO | Retriever: context built, length=2540
+2026-06-10 17:58:14 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 17:58:14 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 17:58:14 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 17:58:14 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 17:58:14 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 17:58:14 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 17:58:24 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程和教材的列表，这些信息与用户的问题无关，因此不能充分回答用户关于标签预测的最新模型/方案的问题。",
+    "gap": "缺少关于标签预测的最新模型/方案的具体信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "由于当前信息与用户问题无关，需要通过联网搜索来获取相关领域的最新信息。"
+}
+```
+2026-06-10 17:58:24 | INFO | Decision: WEB_SEARCH - 由于当前信息与用户问题无关，需要通过联网搜索来获取相关领域的最新信息。
+2026-06-10 17:58:24 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-10 17:58:26 | INFO | Tool web_search: executed successfully
+2026-06-10 17:58:26 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 17:58:26 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 17:58:26 | INFO | ReAct: conditions met for finishing
+2026-06-10 17:58:26 | INFO | ReAct: generating final answer
+2026-06-10 17:58:46 | INFO | ReAct: generated answer, 511 chars
+2026-06-10 17:58:46 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 17:58:46 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 17:58:46 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **基于语义检索模型和知海图大模型结合的分类方案**：这种方案在大模型的输出中可以得到模型对标签中每个token的预测概率，对每个label的所有...
+2026-06-10 18:08:50 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-10 18:08:56 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 18:08:56 | INFO | Loaded document registry: 3 files
+2026-06-10 18:08:56 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 18:08:56 | INFO | Deduplication initialized
+2026-06-10 18:08:56 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 18:08:56 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 18:08:56 | INFO | BM25 index loaded: 75 documents
+2026-06-10 18:08:56 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-10 18:08:56 | INFO | 工具系统已初始化: provider=tavily
+2026-06-10 18:08:56 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-10 18:08:56 | INFO | DataProcessingTool 已注册
+2026-06-10 18:08:56 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-10 18:09:04 | INFO | CrossEncoder model loaded successfully
+2026-06-10 18:09:22 | INFO | [default] 用户提问：你是谁
+2026-06-10 18:09:22 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-10 18:09:27 | INFO | MemoryManager initialized
+2026-06-10 18:09:27 | INFO | 记忆管理器已初始化
+2026-06-10 18:09:27 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-10 18:09:27 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-10 18:09:27 | INFO | Router: pure_llm
+2026-06-10 18:09:27 | INFO | Route -> Pure LLM
+2026-06-10 18:09:27 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-10 18:09:27 | INFO | Initializing LLM: glm-4-flash
+2026-06-10 18:09:29 | INFO | Generator producing response for: 你是谁...
+2026-06-10 18:09:30 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-10 18:09:30 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-10 18:09:30 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-10 18:09:30 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-10 18:09:30 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-10 18:09:35 | INFO | Generator: using generate_pure_llm
+2026-06-10 18:09:35 | INFO | Generator done, response length: 139
+2026-06-10 18:09:35 | INFO | 路径: pure_llm
+2026-06-10 18:09:35 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，具备以下能力：RAG 检索增强生成、ReAct 推理循环、联网搜索和数据处理。同时，我可以使用以下工具：web_search 和 data_process...
+2026-06-10 18:10:13 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-10 18:10:13 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-10 18:10:13 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-10 18:10:13 | INFO | Router: tools
+2026-06-10 18:10:13 | INFO | Route -> Tools (data processing)
+2026-06-10 18:10:13 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-10 18:12:46 | INFO | Tool data_processing: executed successfully
+2026-06-10 18:12:46 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-10 18:12:46 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-10 18:12:46 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-10 18:12:46 | INFO | 路径: tools
+2026-06-10 18:12:46 | INFO | [default] 回答: 本次数据分析共处理了200,000条原始数据，经过清洗后，删除了62列冗余信息，保留了89列关键特征。数据中连续型特征62个，类别型特征27个。清洗后，有效样本总数为176,868，其中好样本（M0）...
+2026-06-10 18:12:46 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-10 18:13:37 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-10 18:13:37 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 18:13:37 | INFO | Route: REACT (keyword: 最新)
+2026-06-10 18:13:37 | INFO | Router: react
+2026-06-10 18:13:37 | INFO | Route -> ReAct Loop
+2026-06-10 18:13:37 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-10 18:13:37 | INFO | Created new memory vector store at ./vector_db/memory_index
+2026-06-10 18:13:37 | INFO | [ReAct] injected history_summary len=839 preview='【当前对话】\n用户：你是谁\n助手：您好！我是企业办公数据助手 AI Agent，具备以下能力：RAG 检索增强生成、ReAct 推理循环、联网搜索和数据处理。同时，我可以使用以下工具：web_search 和 data_processing。我的目标是帮助您高效处理办公数据和相关问题。请问有什么可以帮助您的吗？\n用户：C:\\AI Agent\\financial_staff_agent\\docume'
+2026-06-10 18:13:37 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-10 18:13:37 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-10 18:13:37 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-10 18:13:42 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要收集关于这方面的标签预测的最新模型/方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "",
+    "reasoning": "作为第一轮，需要从本地知识库中检索相关信息。"
+}
+```
+2026-06-10 18:13:42 | INFO | Decision: RETRIEVE - 作为第一轮，需要从本地知识库中检索相关信息。
+2026-06-10 18:13:42 | INFO | ReAct Retrieve: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 18:13:42 | INFO | Retriever processing query: 这方面的标签预测，目前学界最新的模型/方案有哪些...
+2026-06-10 18:13:42 | INFO | Retriever: starting knowledge base search
+2026-06-10 18:13:47 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-10 18:13:47 | INFO | Loaded document registry: 3 files
+2026-06-10 18:13:47 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-10 18:13:47 | INFO | Deduplication initialized
+2026-06-10 18:13:47 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-10 18:13:47 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-10 18:13:47 | INFO | BM25 index loaded: 75 documents
+2026-06-10 18:13:50 | INFO | Vector retrieval: 30 candidates
+2026-06-10 18:13:51 | INFO | BM25 search: query='这方面的标签预测，目前学界最新的模型/方案有哪些...', found 30 results
+2026-06-10 18:13:51 | INFO | BM25 retrieval: 30 candidates
+2026-06-10 18:13:51 | INFO | RRF fusion: 2 result sets, 8 unique docs, top 8 returned
+2026-06-10 18:13:51 | INFO | RRF fusion: 8 fused results
+2026-06-10 18:13:51 | INFO |   [粗排1] rrf=0.2333 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+22
+致    谢
+感谢金长龙导师，以严谨认真的学术态度耐心地指导我阅读领域内的相关文
+献...
+2026-06-10 18:13:51 | INFO |   [粗排2] rrf=0.1192 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 18:13:51 | INFO |   [粗排3] rrf=0.0188 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 18:13:51 | INFO |   [粗排4] rrf=0.0077 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 18:13:51 | INFO |   [粗排5] rrf=0.0063 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 18:13:53 | INFO | After reranking: 5 results
+2026-06-10 18:13:53 | INFO | Hybrid search final: 5 results
+2026-06-10 18:13:53 | INFO |   [最终1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-10 18:13:53 | INFO |   [最终2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-10 18:13:53 | INFO |   [最终3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-10 18:13:53 | INFO |   [最终4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的...
+2026-06-10 18:13:53 | INFO |   [最终5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然...
+2026-06-10 18:13:53 | INFO | Knowledge base: 5 results
+2026-06-10 18:13:53 | INFO |   [精排1] score=0.1607 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-10 18:13:53 | INFO |   [精排2] score=0.1207 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-10 18:13:53 | INFO |   [精排3] score=0.0692 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-10 18:13:53 | INFO |   [精排4] score=0.0063 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 方式，先使用 SAM 自带的对象提议生成功能生成细粒度的掩码，然后使用第一
+种方法生成的粗粒度掩码来筛选第二种方法生成的细粒度掩码，筛选方法是将细
+粒度的每个组...
+2026-06-10 18:13:53 | INFO |   [精排5] score=0.0027 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 据点聚类为不同的簇，同一个簇内的点相互之间的 MRD 小于此阈值，而不同簇
+之间任意两个数据点的 MRD 大于此阈值。然而，考虑所有点之间的 MRD 将需
+要很...
+2026-06-10 18:13:53 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-10 18:13:53 | INFO | Retriever: building context
+2026-06-10 18:13:53 | INFO | _build_context: KB context length=2530, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.16)
+2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 64 74
+2022 Ⅱ 马克思主义基本原理 必修 3.0 48 84
+2022 Ⅱ 凝聚态物理（ANU） 必修 2.0 32 88
+2022...
+2026-06-10 18:13:53 | INFO | Retriever: context built, length=2540
+2026-06-10 18:13:53 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-10 18:13:53 | INFO | ReAct Retrieve: found 5 docs
+2026-06-10 18:13:53 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-10 18:13:53 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-10 18:13:53 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-10 18:13:53 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-10 18:13:59 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程和教材的列表，与用户问题无关。这些信息不能充分回答用户关于标签预测的最新模型/方案的问题。",
+    "gap": "需要关于标签预测的最新模型/方案的信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "由于当前信息与用户问题无关，需要通过联网搜索获取相关最新信息。"
+}
+```
+2026-06-10 18:13:59 | INFO | Decision: WEB_SEARCH - 由于当前信息与用户问题无关，需要通过联网搜索获取相关最新信息。
+2026-06-10 18:13:59 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-10 18:14:00 | INFO | Tool web_search: executed successfully
+2026-06-10 18:14:00 | INFO | ReAct WebSearch: found 5 results
+2026-06-10 18:14:00 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-10 18:14:00 | INFO | ReAct: conditions met for finishing
+2026-06-10 18:14:00 | INFO | ReAct: generating final answer
+2026-06-10 18:14:13 | INFO | ReAct: generated answer, 421 chars
+2026-06-10 18:14:13 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-10 18:14:13 | INFO | 路径: react | ReAct循环: 1次
+2026-06-10 18:14:13 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **基于大模型的海量标签多分类方法**：这种方法结合了语义检索模型和知海图大模型，能够在大模型的输出中得到对标签中每个token的预测概率，并对每...
+2026-06-11 00:21:55 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-11 00:22:05 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-11 00:22:05 | INFO | Loaded document registry: 3 files
+2026-06-11 00:22:05 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-11 00:22:05 | INFO | Deduplication initialized
+2026-06-11 00:22:05 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-11 00:22:06 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-11 00:22:06 | INFO | BM25 index loaded: 75 documents
+2026-06-11 00:22:06 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-11 00:22:06 | INFO | 工具系统已初始化: provider=tavily
+2026-06-11 00:22:06 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-11 00:22:06 | INFO | DataProcessingTool 已注册
+2026-06-11 00:22:06 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-11 00:22:15 | INFO | CrossEncoder model loaded successfully
+2026-06-11 00:23:29 | INFO | [default] 用户提问：你是谁
+2026-06-11 00:23:29 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-11 00:23:34 | INFO | MemoryManager initialized
+2026-06-11 00:23:34 | INFO | 记忆管理器已初始化
+2026-06-11 00:23:34 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-11 00:23:35 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-11 00:23:35 | INFO | Router: pure_llm
+2026-06-11 00:23:35 | INFO | Route -> Pure LLM
+2026-06-11 00:23:35 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-11 00:23:35 | INFO | Initializing LLM: glm-4-flash
+2026-06-11 00:23:55 | INFO | Generator producing response for: 你是谁...
+2026-06-11 00:23:55 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-11 00:23:55 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-11 00:23:55 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-11 00:23:55 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-11 00:23:55 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-11 00:24:03 | INFO | Generator: using generate_pure_llm
+2026-06-11 00:24:03 | INFO | Generator done, response length: 174
+2026-06-11 00:24:03 | INFO | 路径: pure_llm
+2026-06-11 00:24:03 | INFO | [default] 回答: 您好！我是企业办公数据助手 AI Agent，具备以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+同时，我可以使用以下工具：
+...
+2026-06-11 00:25:16 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-11 00:25:16 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-11 00:25:16 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-11 00:25:16 | INFO | Router: tools
+2026-06-11 00:25:16 | INFO | Route -> Tools (data processing)
+2026-06-11 00:25:16 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-11 00:27:44 | INFO | Tool data_processing: executed successfully
+2026-06-11 00:27:44 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-11 00:27:44 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-11 00:27:44 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-11 00:27:44 | INFO | 路径: tools
+2026-06-11 00:27:44 | INFO | [default] 回答: 本次信贷数据分析中，原始数据包含200,000行和151列，经过清洗后，数据行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。...
+2026-06-11 00:27:44 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-11 00:28:47 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-11 00:28:47 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-11 00:28:47 | INFO | Route: REACT (keyword: 最新)
+2026-06-11 00:28:47 | INFO | Router: react
+2026-06-11 00:28:47 | INFO | Route -> ReAct Loop
+2026-06-11 00:28:47 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-11 00:28:47 | INFO | Created new memory vector store at ./vector_db/memory_index
+2026-06-11 00:28:47 | INFO | [ReAct] injected history_summary len=853 preview='【当前对话】\n用户：你是谁\n助手：您好！我是企业办公数据助手 AI Agent，具备以下能力：\n\n- RAG 检索增强生成\n- ReAct 推理循环\n- 联网搜索 (Web Search)\n- 数据处理\n\n同时，我可以使用以下工具：\n\n- web_search\n- data_processing\n\n我的目标是帮助您高效处理企业办公中的各种数据和分析需求。请问有什么可以帮助您的吗？\n用户：C:\\AI'
+2026-06-11 00:28:47 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-11 00:28:47 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-11 00:28:47 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-11 00:28:54 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前还没有收集到任何信息。",
+    "gap": "需要收集关于当前学界在标签预测方面的最新模型和方案的信息。",
+    "next_action": "RETRIEVE",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "作为第一步，需要从本地知识库中检索相关信息。"
+}
+```
+2026-06-11 00:28:54 | INFO | Decision: RETRIEVE - 作为第一步，需要从本地知识库中检索相关信息。
+2026-06-11 00:28:54 | INFO | ReAct Retrieve: 标签预测 最新模型 方案...
+2026-06-11 00:28:54 | INFO | Retriever processing query: 标签预测 最新模型 方案...
+2026-06-11 00:28:54 | INFO | Retriever: starting knowledge base search
+2026-06-11 00:28:59 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-11 00:28:59 | INFO | Loaded document registry: 3 files
+2026-06-11 00:28:59 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-11 00:28:59 | INFO | Deduplication initialized
+2026-06-11 00:28:59 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-11 00:28:59 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-11 00:28:59 | INFO | BM25 index loaded: 75 documents
+2026-06-11 00:29:02 | INFO | Vector retrieval: 30 candidates
+2026-06-11 00:29:03 | INFO | BM25 search: query='标签预测 最新模型 方案...', found 30 results
+2026-06-11 00:29:03 | INFO | BM25 retrieval: 30 candidates
+2026-06-11 00:29:03 | INFO | RRF fusion: 2 result sets, 10 unique docs, top 10 returned
+2026-06-11 00:29:03 | INFO | RRF fusion: 10 fused results
+2026-06-11 00:29:03 | INFO |   [粗排1] rrf=0.2073 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+12
+时，本身分布于正常范围内的数据点的距离值可能会大于真正偏离分布的数据
+点。不同于欧几...
+2026-06-11 00:29:03 | INFO |   [粗排2] rrf=0.1205 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | SAM segmentation model are utilized, and reliable semantic p...
+2026-06-11 00:29:03 | INFO |   [粗排3] rrf=0.0204 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | for the test samples. Finally, a student –teacher framework ...
+2026-06-11 00:29:03 | INFO |   [粗排4] rrf=0.0125 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-11 00:29:03 | INFO |   [粗排5] rrf=0.0121 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 3.7.2 块直方图 ....................................................
+2026-06-11 00:29:06 | INFO | After reranking: 5 results
+2026-06-11 00:29:06 | INFO | Hybrid search final: 5 results
+2026-06-11 00:29:06 | INFO |   [最终1] score=0.1077 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68...
+2026-06-11 00:29:06 | INFO |   [最终2] score=0.1018 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84...
+2026-06-11 00:29:06 | INFO |   [最终3] score=0.0216 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思...
+2026-06-11 00:29:06 | INFO |   [最终4] score=0.0066 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+12
+时，本身分布于正常范围内的数据点的距离值可能会大于真正偏离分布的数据
+点。不同于欧几...
+2026-06-11 00:29:06 | INFO |   [最终5] score=0.0013 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | SAM segmentation model are utilized, and reliable semantic p...
+2026-06-11 00:29:06 | INFO | Knowledge base: 5 results
+2026-06-11 00:29:06 | INFO |   [精排1] score=0.1077 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会...
+2026-06-11 00:29:06 | INFO |   [精排2] score=0.1018 source=202100700110WHBFZZWCJDZG.pdf | 2022 Ⅱ 概率论与数理统计Ⅱ 必修 3.0 48 94
+2022 Ⅱ 经典力学2（ANU） 必修 2.0 32 84
+2022 Ⅱ 量子力学 必修 4.0 ...
+2026-06-11 00:29:06 | INFO |   [精排3] score=0.0216 source=202100700110WHBFZZWCJDZG.pdf | 2023 Ⅰ 光电子技术 限选 2.0 32 91
+2023 Ⅰ 光学 必修 3.0 48 93
+2023 Ⅰ 批判性思维导论（稷下创新） 任选 2.0 32 ...
+2026-06-11 00:29:06 | INFO |   [精排4] score=0.0066 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | 山东大学本科毕业论文(设计)
+12
+时，本身分布于正常范围内的数据点的距离值可能会大于真正偏离分布的数据
+点。不同于欧几里得距离，马氏距离可以旋转，放缩操作解决...
+2026-06-11 00:29:06 | INFO |   [精排5] score=0.0013 source=基于卷积块注意力机制与U-Net跳跃连接的无监督逻辑异常检测算法研究.pdf | SAM segmentation model are utilized, and reliable semantic pseudo -label masks a...
+2026-06-11 00:29:06 | INFO | Retriever: KB search returned <class 'list'>
+2026-06-11 00:29:06 | INFO | Retriever: building context
+2026-06-11 00:29:06 | INFO | _build_context: KB context length=2749, preview=[来源 1: 202100700110WHBFZZWCJDZG.pdf] (相关度: 0.11)
+2022 Ⅰ 基础物理实验（3） 必修 1.5 48 92
+2022 Ⅰ 经典力学1（ANU） 必修 2.0 32 68
+2022 Ⅰ 毛泽东思想和中国特色社会主义理论体系概论 必修 3.0 56 84
+2022 Ⅰ 模拟电路及实验 限选 3.5 64 95
+2022 Ⅰ 数学抽象2（ANU） 必修 ...
+2026-06-11 00:29:06 | INFO | Retriever: context built, length=2759
+2026-06-11 00:29:06 | INFO | Retriever done: 5 knowledge results, 0 web results
+2026-06-11 00:29:06 | INFO | ReAct Retrieve: found 5 docs
+2026-06-11 00:29:06 | INFO | _should_finish result: False, retrieved_docs=1, web_results=0, iteration=0
+2026-06-11 00:29:06 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-11 00:29:06 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-11 00:29:06 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-11 00:29:13 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息主要是关于课程设置和学分分配，这与用户提出的标签预测问题不相关。因此，这些信息不能充分回答用户问题。",
+    "gap": "缺少关于标签预测的最新模型和方案的信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "标签预测 最新模型 方案",
+    "reasoning": "需要通过联网搜索来获取关于标签预测的最新模型和方案的信息。"
+}
+```
+2026-06-11 00:29:13 | INFO | Decision: WEB_SEARCH - 需要通过联网搜索来获取关于标签预测的最新模型和方案的信息。
+2026-06-11 00:29:13 | INFO | ReAct WebSearch: 标签预测 最新模型 方案...
+2026-06-11 00:29:15 | INFO | Tool web_search: executed successfully
+2026-06-11 00:29:15 | INFO | ReAct WebSearch: found 5 results
+2026-06-11 00:29:15 | INFO | _should_finish result: True, retrieved_docs=1, web_results=1, iteration=1
+2026-06-11 00:29:15 | INFO | ReAct: conditions met for finishing
+2026-06-11 00:29:15 | INFO | ReAct: generating final answer
+2026-06-11 00:29:30 | INFO | ReAct: generated answer, 291 chars
+2026-06-11 00:29:30 | INFO | ReAct Loop: completed in 1 iterations
+2026-06-11 00:29:30 | INFO | 路径: react | ReAct循环: 1次
+2026-06-11 00:29:30 | INFO | [default] 回答: 目前学界在标签预测方面的最新模型和方案包括：
+
+1. **基于用户关注行为的标签预测方法**：这种方法利用用户关注行为的特征矩阵来预测行业标签，最大预测准确率可达0.657【3】。
+
+2. **基于大...
+2026-06-11 00:50:34 | INFO | === 学习助手AI Agent 启动 ===
+2026-06-11 00:50:39 | INFO | DocumentProcessor initialized (semantic_chunk=True)
+2026-06-11 00:50:39 | INFO | Loaded document registry: 3 files
+2026-06-11 00:50:39 | INFO | ChunkDeduplicator initialized, max_hamming_distance=3
+2026-06-11 00:50:39 | INFO | Deduplication initialized
+2026-06-11 00:50:39 | INFO | Loading existing vector DB from vector_db\faiss_index
+2026-06-11 00:50:39 | INFO | BM25 index loaded from vector_db\bm25_index.pkl: 75 documents
+2026-06-11 00:50:39 | INFO | BM25 index loaded: 75 documents
+2026-06-11 00:50:39 | INFO | Registered tool: web_search (category=search, priority=10)
+2026-06-11 00:50:39 | INFO | 工具系统已初始化: provider=tavily
+2026-06-11 00:50:39 | INFO | Registered tool: data_processing (category=data, priority=10)
+2026-06-11 00:50:39 | INFO | DataProcessingTool 已注册
+2026-06-11 00:50:39 | INFO | Reranker initialized with model: BAAI/bge-reranker-base
+2026-06-11 00:50:44 | INFO | CrossEncoder model loaded successfully
+2026-06-11 00:51:19 | INFO | [default] 用户提问：你是谁
+2026-06-11 00:51:19 | INFO | 初始化 Embedding 模型: BAAI/bge-small-zh-v1.5
+2026-06-11 00:51:25 | INFO | MemoryManager initialized
+2026-06-11 00:51:25 | INFO | 记忆管理器已初始化
+2026-06-11 00:51:25 | INFO | === Running Agent for query: 你是谁... ===
+2026-06-11 00:51:25 | INFO | Route: PURE_LLM (keyword: 你是谁)
+2026-06-11 00:51:25 | INFO | Router: pure_llm
+2026-06-11 00:51:25 | INFO | Route -> Pure LLM
+2026-06-11 00:51:25 | INFO | === Pure LLM: Direct LLM without RAG ===
+2026-06-11 00:51:25 | INFO | Initializing LLM: glm-4-flash
+2026-06-11 00:51:29 | INFO | Generator producing response for: 你是谁...
+2026-06-11 00:51:29 | INFO | Generator branch: query_type=QueryType.PURE_LLM, has_context=False, has_web=False
+2026-06-11 00:51:29 | INFO | [Pure LLM] 注入工具: web_search
+2026-06-11 00:51:29 | INFO | [Pure LLM] 注入工具: data_processing
+2026-06-11 00:51:29 | INFO | [Pure LLM] 已注入工具列表到 system prompt
+2026-06-11 00:51:29 | INFO | generate_pure_llm: history turns=0, query_len=3
+2026-06-11 00:51:35 | INFO | Generator: using generate_pure_llm
+2026-06-11 00:51:35 | INFO | Generator done, response length: 122
+2026-06-11 00:51:35 | INFO | 路径: pure_llm
+2026-06-11 00:51:35 | INFO | [default] 回答: 我是企业办公数据助手 AI Agent，具备以下能力：
+
+- RAG 检索增强生成
+- ReAct 推理循环
+- 联网搜索 (Web Search)
+- 数据处理
+
+我的工具包括：
+
+- web_se...
+2026-06-11 00:52:24 | INFO | [default] 用户提问：C:\AI Agent\financial_staff_agent\documents\accepted_2007_to_2018Q4.csv对该文件进行数据分析
+2026-06-11 00:52:24 | INFO | === Running Agent for query: C:\AI Agent\financial_staff_agent\documents\accept... ===
+2026-06-11 00:52:24 | INFO | Route: TOOLS (data processing keyword: 数据分析)
+2026-06-11 00:52:24 | INFO | Router: tools
+2026-06-11 00:52:24 | INFO | Route -> Tools (data processing)
+2026-06-11 00:52:24 | INFO | [Tools Node] 执行工具，query_type=None
+2026-06-11 00:58:22 | INFO | Tool data_processing: executed successfully
+2026-06-11 00:58:22 | INFO | [Tools Node] Phase 1 报告: %s
+2026-06-11 00:58:22 | INFO | [Tools Node] Phase 2 报告: %s
+2026-06-11 00:58:22 | INFO | [Tools Node] deliverables = %d 个报告
+2026-06-11 00:58:22 | INFO | 路径: tools
+2026-06-11 00:58:22 | INFO | [default] 回答: 本次数据分析中，原始数据包含200,000行和151列，经过清洗后，行数保持不变，列数减少至89列，删除了部分无关特征。清洗后数据中包含62个连续型特征和27个类别型特征，共15列存在缺失值。在好坏样...
+2026-06-11 00:58:22 | INFO | [ReportServer] 已启动 http://127.0.0.1:7861 -> C:\AI Agent\study_ai_agent_TD_redesign\output\data_processing
+2026-06-11 00:59:22 | INFO | [default] 用户提问：这方面的标签预测，目前学界最新的模型/方案有哪些
+2026-06-11 00:59:22 | INFO | === Running Agent for query: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-11 00:59:22 | INFO | Route: REACT (keyword: 最新)
+2026-06-11 00:59:22 | INFO | Router: react
+2026-06-11 00:59:22 | INFO | Route -> ReAct Loop
+2026-06-11 00:59:22 | INFO | === ReAct Loop: Starting multi-turn reasoning ===
+2026-06-11 00:59:22 | INFO | Created new memory vector store at ./vector_db/memory_index
+2026-06-11 00:59:22 | INFO | [ReAct] injected history_summary len=797 preview='【当前对话】\n用户：你是谁\n助手：我是企业办公数据助手 AI Agent，具备以下能力：\n\n- RAG 检索增强生成\n- ReAct 推理循环\n- 联网搜索 (Web Search)\n- 数据处理\n\n我的工具包括：\n\n- web_search\n- data_processing\n用户：C:\\AI Agent\\financial_staff_agent\\documents\\accepted_2007'
+2026-06-11 00:59:22 | INFO | === ReAct Loop starting for: 这方面的标签预测，目前学界最新的模型/方案有哪些... ===
+2026-06-11 00:59:22 | INFO | === Loop start: iteration=0, max=5 ===
+2026-06-11 00:59:22 | INFO | --- ReAct Iteration 1/5 ---
+2026-06-11 00:59:33 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息包括用户的基本信息、一个数据分析项目的描述，包括数据清洗、特征分析、样本分布等。然而，这些信息与用户当前提出的问题——关于标签预测的最新模型/方案——没有直接关联。",
+    "gap": "还缺少关于标签预测最新模型和方案的具体信息。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "最新标签预测模型 方案",
+    "reasoning": "需要通过联网搜索来获取关于标签预测最新模型和方案的具体信息。"
+}
+```
+2026-06-11 00:59:33 | INFO | Decision: WEB_SEARCH - 需要通过联网搜索来获取关于标签预测最新模型和方案的具体信息。
+2026-06-11 00:59:33 | INFO | ReAct WebSearch: 最新标签预测模型 方案...
+2026-06-11 00:59:36 | INFO | Tool web_search: executed successfully
+2026-06-11 00:59:36 | INFO | ReAct WebSearch: found 5 results
+2026-06-11 00:59:36 | INFO | _should_finish result: False, retrieved_docs=0, web_results=1, iteration=0
+2026-06-11 00:59:36 | INFO | After increment: iteration=1, while condition: 1 < 5 = True
+2026-06-11 00:59:36 | INFO | === Loop start: iteration=1, max=5 ===
+2026-06-11 00:59:36 | INFO | --- ReAct Iteration 2/5 ---
+2026-06-11 00:59:46 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息是通过联网搜索得到的关于标签预测模型的专利信息。这些信息提供了关于标签预测模型的一些具体应用和训练方法，但并未涵盖目前学界最新的模型和方案。",
+    "gap": "还缺少关于目前学界最新的标签预测模型和方案的具体信息，包括最新的研究进展、论文发表、知名模型和算法等。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "最新标签预测模型 方案 2023",
+    "reasoning": "由于当前收集的信息并未充分回答用户关于最新模型和方案的问题，需要进一步通过联网搜索获取最新的研究进展和模型信息。"
+}
+```
+2026-06-11 00:59:46 | INFO | Decision: WEB_SEARCH - 由于当前收集的信息并未充分回答用户关于最新模型和方案的问题，需要进一步通过联网搜索获取最新的研究进展和模型信息。
+2026-06-11 00:59:46 | INFO | ReAct WebSearch: 最新标签预测模型 方案 2023...
+2026-06-11 00:59:48 | INFO | Tool web_search: executed successfully
+2026-06-11 00:59:48 | INFO | ReAct WebSearch: found 5 results
+2026-06-11 00:59:48 | INFO | _should_finish result: False, retrieved_docs=0, web_results=2, iteration=1
+2026-06-11 00:59:48 | INFO | After increment: iteration=2, while condition: 2 < 5 = True
+2026-06-11 00:59:48 | INFO | === Loop start: iteration=2, max=5 ===
+2026-06-11 00:59:48 | INFO | --- ReAct Iteration 3/5 ---
+2026-06-11 00:59:59 | INFO | Think LLM raw response: ```json
+{
+    "analysis": "目前收集到的信息包括关于标签预测模型的专利信息以及2023年的相关研究进展。这些信息提供了关于标签预测模型的一些具体方法和最新的研究动态，但可能没有涵盖所有最新的模型和方案。",
+    "gap": "可能缺少一些最新的、尚未公开发表的模型和方案，以及特定领域的应用案例。",
+    "next_action": "WEB_SEARCH",
+    "action_input": "最新标签预测模型 方案 2023 进展",
+    "reasoning": "为了更全面地回答用户的问题，需要进一步搜索最新的研究进展和模型信息。"
+}
+```
+2026-06-11 00:59:59 | INFO | Decision: WEB_SEARCH - 为了更全面地回答用户的问题，需要进一步搜索最新的研究进展和模型信息。
+2026-06-11 00:59:59 | INFO | ReAct WebSearch: 最新标签预测模型 方案 2023 进展...
+2026-06-11 01:00:01 | INFO | Tool web_search: executed successfully
+2026-06-11 01:00:01 | INFO | ReAct WebSearch: found 5 results
+2026-06-11 01:00:01 | INFO | _should_finish result: True, retrieved_docs=0, web_results=3, iteration=2
+2026-06-11 01:00:01 | INFO | ReAct: conditions met for finishing
+2026-06-11 01:00:01 | INFO | ReAct: generating final answer
+2026-06-11 01:00:23 | INFO | ReAct: generated answer, 603 chars
+2026-06-11 01:00:23 | INFO | ReAct Loop: completed in 2 iterations
+2026-06-11 01:00:23 | INFO | 路径: react | ReAct循环: 2次
+2026-06-11 01:00:23 | INFO | [default] 回答: 目前学界在标签预测领域的最新模型和方案包括：
+
+1. **基于不完全标注的自监督多标签文本分类**：这种方法使用人工标注数据集来训练教师模型，然后使用教师模型对无标注数据集进行伪标签预测，通过预先定义...

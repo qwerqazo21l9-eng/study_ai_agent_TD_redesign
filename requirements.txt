@@ -1,0 +1,46 @@
+# 核心Agent框架
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langchain-text-splitters>=0.3.0
+
+# 模型推理
+transformers>=4.45.0
+torch>=2.6.0
+llama-cpp-python>=0.2.90
+accelerate>=0.33.0
+sentence-transformers>=3.0.1
+
+# RAG & 向量库
+faiss-cpu>=1.8.0
+rank_bm25>=0.2.2
+jieba>=0.42.1
+unstructured>=0.15.0
+pypdf>=4.3.1
+python-docx>=1.1.2
+pytesseract>=0.3.10
+easyocr>=1.7.1
+
+# 工程化
+pyyaml>=6.0.2
+pydantic-settings>=2.5.2
+loguru>=0.7.2
+fastapi>=0.115.0
+uvicorn>=0.30.6
+pandas>=2.2.2
+numpy>=1.26.4
+gradio>=4.40.0
+
+# 异步并发
+aiohttp>=3.9.0
+uvloop>=0.19.0
+python-multipart>=0.0.6
+httpx>=0.25.0
+
+# 缓存和存储
+redis>=5.0.0
+hiredis>=2.2.3
+
+# 压力测试
+locust>=2.15.0

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业办公数据助手 AI Agent — 系统架构图</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #1a1a2e;
+    overflow-x: auto;
+  }
+  .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+  }
+  svg { display: block; margin: 0 auto; width: 100%; height: auto; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 24px;
+    font-size: 13px;
+    color: #475569;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .legend-swatch {
+    width: 14px; height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>企业办公数据助手 AI Agent</h1>
+<div class="subtitle">基于 LangGraph 的四路由智能体架构 · 全流程系统结构图</div>
+
+<svg viewBox="0 0 1600 2480" xmlns="http://www.w3.org/2000/svg" style="max-width:1600px;">
+  <defs>
+    <linearGradient id="gEntry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1"/><stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="gRouter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b"/><stop offset="100%" style="stop-color:#ef4444"/>
+    </linearGradient>
+    <linearGradient id="gPureLLM" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/><stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="gRAG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/><stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="gReAct" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/><stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="gTools" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/><stop offset="100%" style="stop-color:#ea580c"/>
+    </linearGradient>
+    <linearGradient id="gMemory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6"/><stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+    <linearGradient id="gInfra" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#64748b"/><stop offset="100%" style="stop-color:#475569"/>
+    </linearGradient>
+
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#00000022"/>
+    </filter>
+    <filter id="shadowSm" x="-8%" y="-8%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="3" flood-color="#00000015"/>
+    </filter>
+
+    <marker id="aEntry" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#6366f1"/>
+    </marker>
+    <marker id="aRouter" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f59e0b"/>
+    </marker>
+    <marker id="aGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#10b981"/>
+    </marker>
+    <marker id="aBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#3b82f6"/>
+    </marker>
+    <marker id="aPink" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#ec4899"/>
+    </marker>
+    <marker id="aOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f97316"/>
+    </marker>
+    <marker id="aGray" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#94a3b8"/>
+    </marker>
+    <marker id="aTeal" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#14b8a6"/>
+    </marker>
+  </defs>
+
+
+  <!-- ============================================================ -->
+  <!-- LAYER 1: ENTRY POINTS (y=30~200)                              -->
+  <!-- ============================================================ -->
+  <rect x="30" y="25" width="1540" height="165" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="55" y="52" font-size="15" font-weight="700" fill="#475569">📡 入口层 — Entry Points</text>
+
+  <!-- Gradio -->
+  <rect x="200" y="70" width="300" height="105" rx="14" fill="url(#gEntry)" filter="url(#shadow)"/>
+  <text x="350" y="108" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">🖥️ Gradio UI</text>
+  <text x="350" y="132" text-anchor="middle" font-size="12" fill="#e0e7ff">main.py · Port 7860</text>
+  <text x="350" y="152" text-anchor="middle" font-size="11" fill="#c7d2fe">chat_response() / 对话界面 / 文件上传</text>
+  <line x1="350" y1="175" x2="350" y2="210" stroke="#6366f1" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#aEntry)"/>
+
+  <!-- FastAPI -->
+  <rect x="650" y="70" width="300" height="105" rx="14" fill="url(#gEntry)" filter="url(#shadow)"/>
+  <text x="800" y="108" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">🌐 FastAPI Server</text>
+  <text x="800" y="132" text-anchor="middle" font-size="12" fill="#e0e7ff">run_api_server.py / server.py · Port 8000</text>
+  <text x="800" y="152" text-anchor="middle" font-size="11" fill="#c7d2fe">POST /v1/query · GET /v1/query/stream · SSE</text>
+  <line x1="800" y1="175" x2="600" y2="210" stroke="#6366f1" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#aEntry)"/>
+
+  <!-- File Upload -->
+  <rect x="1100" y="70" width="300" height="105" rx="14" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="1250" y="108" text-anchor="middle" font-size="17" font-weight="700" fill="#4338ca">📂 文件上传</text>
+  <text x="1250" y="132" text-anchor="middle" font-size="12" fill="#6366f1">CSV / JSON / TXT</text>
+  <text x="1250" y="152" text-anchor="middle" font-size="11" fill="#818cf8">自动路由到 TOOLS 分支 → DataProcessingTool</text>
+  <line x1="1250" y1="175" x2="850" y2="210" stroke="#6366f1" stroke-width="2.2" stroke-dasharray="6,4" marker-end="url(#aEntry)"/>
+
+
+  <!-- ============================================================ -->
+  <!-- LAYER 2: CORE STATE MACHINE (y=220~420)                      -->
+  <!-- ============================================================ -->
+  <rect x="30" y="215" width="1540" height="215" rx="16" fill="#fefce8" stroke="#fde68a" stroke-width="1.5"/>
+  <text x="55" y="245" font-size="15" font-weight="700" fill="#92400e">⚙️ 核心状态机 — LangGraph StateGraph (workflow.py)</text>
+
+  <!-- AgentState Schema -->
+  <rect x="80" y="265" width="230" height="95" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="195" y="293" text-anchor="middle" font-size="14" font-weight="700" fill="#334155">🗂️ AgentState (schema.py)</text>
+  <text x="195" y="315" text-anchor="middle" font-size="11" fill="#64748b">query · route_type · intent</text>
+  <text x="195" y="333" text-anchor="middle" font-size="11" fill="#64748b">history · memory_context · answer</text>
+  <text x="195" y="351" text-anchor="middle" font-size="11" fill="#64748b">deliverables · observations · temp_data</text>
+
+  <!-- Arrow: State → Router -->
+  <line x1="310" y1="315" x2="380" y2="315" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+
+  <!-- Router Node -->
+  <rect x="390" y="270" width="260" height="90" rx="16" fill="url(#gRouter)" filter="url(#shadow)"/>
+  <text x="520" y="303" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">🎯 router_node</text>
+  <text x="520" y="325" text-anchor="middle" font-size="12" fill="#fef3c7">determine_route()</text>
+  <text x="520" y="346" text-anchor="middle" font-size="10" fill="#fde68a">关键词匹配 PURE_LLM_KEYWORDS /</text>
+  <text x="520" y="360" text-anchor="middle" font-size="10" fill="#fde68a">DATA_PROCESSING_KEYWORDS → RouteType 枚举</text>
+
+  <!-- Arrow: Router → Conditional Edge -->
+  <line x1="650" y1="315" x2="720" y2="315" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#aRouter)"/>
+
+  <!-- route_query conditional box -->
+  <rect x="730" y="275" width="190" height="80" rx="12" fill="#fff" stroke="#f59e0b" stroke-width="2.5" filter="url(#shadowSm)"/>
+  <text x="825" y="303" text-anchor="middle" font-size="14" font-weight="700" fill="#b45309">🔀 route_query()</text>
+  <text x="825" y="323" text-anchor="middle" font-size="11" fill="#92400e">条件边 ConditionalEdge</text>
+  <text x="825" y="343" text-anchor="middle" font-size="11" fill="#d97706">→ 四路分发 ↓ ↓ ↓ ↓</text>
+
+  <!-- Memory Node (below router row) -->
+  <rect x="1100" y="270" width="280" height="90" rx="14" fill="url(#gMemory)" filter="url(#shadow)"/>
+  <text x="1240" y="303" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">🧠 memory_node</text>
+  <text x="1240" y="325" text-anchor="middle" font-size="11" fill="#ccfbf1">ShortTermMemory: 对话历史缓存</text>
+  <text x="1240" y="345" text-anchor="middle" font-size="10" fill="#99f6e4">LongTermMemory: FAISS 向量存储 + N轮自动摘要</text>
+
+  <!-- Memory always-edge label -->
+  <path d="M1240,365 L1240,395 L520,395 L520,365" stroke="#14b8a6" stroke-width="1.8" fill="none" stroke-dasharray="5,3" marker-end="url(#aTeal)"/>
+  <text x="900" y="388" font-size="10" fill="#0d9488">每轮执行后 always → memory_node 持久化；下轮启动时加载 memory_context</text>
+
+
+  <!-- ============================================================ -->
+  <!-- LAYER 3: FOUR ROUTING BRANCHES (y=455~1080)                  -->
+  <!-- ============================================================ -->
+  <rect x="30" y="450" width="1540" height="640" rx="16" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <text x="55" y="480" font-size="15" font-weight="700" fill="#166534">🔀 四路由分支 — Four Routing Branches</text>
+
+  <!-- ---- Routing split arrows from route_query down to each branch ---- -->
+  <line x1="825" y1="355" x2="825" y2="400" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="250" y1="400" x2="1350" y2="400" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- Branch 1: Pure LLM (leftmost) -->
+  <line x1="250" y1="400" x2="250" y2="505" stroke="#10b981" stroke-width="2.5" marker-end="url(#aGreen)"/>
+  <text x="235" y="430" font-size="11" font-weight="700" fill="#059669">PURE_LLM</text>
+
+  <rect x="60" y="510" width="380" height="240" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5" filter="url(#shadowSm)"/>
+  <rect x="60" y="510" width="380" height="42" rx="16" fill="url(#gPureLLM)"/>
+  <text x="250" y="537" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">💬 分支一：Pure LLM 纯净对话</text>
+
+  <rect x="85" y="565" width="330" height="65" rx="10" fill="#fff" stroke="#a7f3d0" stroke-width="1.5"/>
+  <text x="250" y="588" text-anchor="middle" font-size="13" font-weight="700" fill="#065f46">pure_llm_node → GeneratorAgent</text>
+  <text x="250" y="610" text-anchor="middle" font-size="11" fill="#047857">generate_pure_llm(query, history)</text>
+
+  <rect x="85" y="642" width="330" height="92" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2"/>
+  <text x="250" y="665" text-anchor="middle" font-size="12" font-weight="700" fill="#166534">_build_pure_llm_prompt()</text>
+  <text x="250" y="686" text-anchor="middle" font-size="10" fill="#15803d">① BASE_PROMPT: 角色定义</text>
+  <text x="250" y="702" text-anchor="middle" font-size="10" fill="#15803d">② ToolRegistry.list_tools() 动态注入工具列表</text>
+  <text x="250" y="720" text-anchor="middle" font-size="10" fill="#15803d">③ TAIL_PROMPT: 输出约束</text>
+
+  <text x="250" y="750" text-anchor="middle" font-size="11" fill="#059669" font-style="italic">适用：问候、自我介绍、能力查询、闲聊等非检索类问题</text>
+
+
+  <!-- Branch 2: RAG -->
+  <line x1="550" y1="400" x2="550" y2="505" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#aBlue)"/>
+  <text x="535" y="430" font-size="11" font-weight="700" fill="#2563eb">RAG</text>
+
+  <rect x="480" y="510" width="340" height="370" rx="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5" filter="url(#shadowSm)"/>
+  <rect x="480" y="510" width="340" height="42" rx="16" fill="url(#gRAG)"/>
+  <text x="650" y="537" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">📚 分支二：RAG 检索增强生成</text>
+
+  <rect x="500" y="565" width="298" height="58" rx="10" fill="#fff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="649" y="588" text-anchor="middle" font-size="13" font-weight="700" fill="#1e40af">supervisor_node</text>
+  <text x="649" y="608" text-anchor="middle" font-size="10" fill="#2563eb">SUPERVISOR_SYSTEM_PROMPT → 5 类意图判断</text>
+
+  <rect x="500" y="633" width="142" height="48" rx="8" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="571" y="653" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">retriever_node</text>
+  <text x="571" y="670" text-anchor="middle" font-size="9" fill="#2563eb">Hybrid 召回</text>
+
+  <rect x="656" y="633" width="142" height="48" rx="8" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="727" y="653" text-anchor="middle" font-size="11" font-weight="600" fill="#1e40af">generator_node</text>
+  <text x="727" y="670" text-anchor="middle" font-size="9" fill="#2563eb">拼接上下文生成</text>
+
+  <rect x="500" y="693" width="298" height="72" rx="8" fill="#f0f9ff" stroke="#93c5fd" stroke-dasharray="4,2"/>
+  <text x="649" y="715" text-anchor="middle" font-size="11" font-weight="600" fill="#3b82f6">🧩 chat_fallback_node (兜底)</text>
+  <text x="649" y="732" text-anchor="middle" font-size="9" fill="#64748b">当 supervisor 判定为 chat 类型时直接回答</text>
+  <text x="649" y="752" text-anchor="middle" font-size="9" fill="#64748b">web_search_node (Tavily 联网搜索)</text>
+
+  <!-- RAG sub-detail: Hybrid Retrieval -->
+  <rect x="500" y="777" width="298" height="90" rx="8" fill="#fff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="649" y="797" text-anchor="middle" font-size="11" font-weight="700" fill="#1e40af">🔍 Hybrid Retriever 细节</text>
+  <text x="649" y="817" text-anchor="middle" font-size="10" fill="#2563eb">Dense Retrieval (向量相似度) + BM25 (关键词)</text>
+  <text x="649" y="835" text-anchor="middle" font-size="10" fill="#2563eb">→ RRF 倒数排名融合重排 → Top-K 结果</text>
+  <text x="649" y="855" text-anchor="middle" font-size="9" fill="#60a5fa">数据源: vector_db/*.faiss + *.pkl</text>
+
+
+  <!-- Branch 3: ReAct -->
+  <line x1="850" y1="400" x2="850" y2="505" stroke="#ec4899" stroke-width="2.5" marker-end="url(#aPink)"/>
+  <text x="835" y="430" font-size="11" font-weight="700" fill="#db2777">REACT</text>
+
+  <rect x="850" y="510" width="320" height="330" rx="16" fill="#fdf2f8" stroke="#ec4899" stroke-width="2.5" filter="url(#shadowSm)"/>
+  <rect x="850" y="510" width="320" height="42" rx="16" fill="url(#gReAct)"/>
+  <text x="1010" y="537" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">🔄 分支三：ReAct 推理循环</text>
+
+  <!-- Think -->
+  <rect x="870" y="565" width="150" height="78" rx="12" fill="#fff" stroke="#f9a8d4" stroke-width="1.5"/>
+  <text x="945" y="590" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">🤔 THINK</text>
+  <text x="945" y="610" text-anchor="middle" font-size="10" fill="#9d174d">解析 action + confidence</text>
+  <text x="945" y="628" text-anchor="middle" font-size="9" fill="#9d174d">round_mgr 一致性检查</text>
+
+  <!-- Act -->
+  <rect x="1040" y="565" width="115" height="78" rx="12" fill="#fff" stroke="#f9a8d4" stroke-width="1.5"/>
+  <text x="1098" y="590" text-anchor="middle" font-size="13" font-weight="700" fill="#be185d">⚡ ACT</text>
+  <text x="1098" y="610" text-anchor="middle" font-size="9" fill="#9d174d">RETRIEVE</text>
+  <text x="1098" y="626" text-anchor="middle" font-size="9" fill="#9d174d">WEB_SEARCH</text>
+  <text x="1098" y="642" text-anchor="middle" font-size="9" fill="#9d174d">THINK</text>
+
+  <!-- Observe -->
+  <rect x="955" y="655" width="145" height="62" rx="12" fill="#fce7f3" stroke="#f9a8d4" stroke-width="1.5"/>
+  <text x="1027" y="678" text-anchor="middle" font-size="12" font-weight="700" fill="#be185d">👁️ OBSERVE</text>
+  <text x="1027" y="698" text-anchor="middle" font-size="9" fill="#9d174d">结果入 observations → 回到 THINK</text>
+
+  <!-- Cycle arrows -->
+  <path d="M1020,602 L1035,602" stroke="#ec4899" stroke-width="1.8" fill="none" marker-end="url(#aPink)"/>
+  <path d="M1098,643 Q1140,643 1140,686 Q1140,728 1100,728" stroke="#ec4899" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+  <path d="M1100,728 L1027,728 L1027,722" stroke="#ec4899" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+  <path d="M955,686 Q920,686 920,643 L920,643" stroke="#ec4899" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#aPink)"/>
+
+  <!-- Finish -->
+  <rect x="870" y="735" width="280" height="46" rx="12" fill="url(#gReAct)"/>
+  <text x="1010" y="763" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">GENERATE → FINISH (_generate_final)</text>
+
+  <rect x="870" y="790" width="280" height="40" rx="8" fill="#fff" stroke="#f9a8d4" stroke-width="1"/>
+  <text x="1010" y="815" text-anchor="middle" font-size="10" fill="#be185d">最多 5 轮迭代 · confidence ≥ 0.7 时结束循环</text>
+
+
+  <!-- Branch 4: TOOLS -->
+  <line x1="1150" y1="400" x2="1150" y2="505" stroke="#f97316" stroke-width="2.5" marker-end="url(#aOrange)"/>
+  <text x="1135" y="430" font-size="11" font-weight="700" fill="#ea580c">TOOLS</text>
+
+  <rect x="1200" y="510" width="350" height="370" rx="16" fill="#fff7ed" stroke="#f97316" stroke-width="2.5" filter="url(#shadowSm)"/>
+  <rect x="1200" y="510" width="350" height="42" rx="16" fill="url(#gTools)"/>
+  <text x="1375" y="537" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">🛠️ 分支四：数据处理工具</text>
+
+  <!-- DataProcessingTool entry -->
+  <rect x="1220" y="565" width="308" height="70" rx="12" fill="#fff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="1374" y="590" text-anchor="middle" font-size="13" font-weight="700" fill="#c2410c">tools_node → DataProcessingTool</text>
+  <text x="1374" y="610" text-anchor="middle" font-size="10" fill="#9a3412">继承 BaseTool，注册到 ToolRegistry</text>
+  <text x="1374" y="626" text-anchor="middle" font-size="10" fill="#9a3412">_execute_impl() → master_agent.run()</text>
+
+  <!-- Phase 1 -->
+  <rect x="1220" y="648" width="148" height="96" rx="10" fill="#fff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="1294" y="673" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Phase 1: 数据清洗</text>
+  <text x="1294" y="693" text-anchor="middle" font-size="9" fill="#9a3412">data_cleaning.py</text>
+  <text x="1294" y="708" text-anchor="middle" font-size="9" fill="#9a3412">skill_clean_agent</text>
+  <text x="1294" y="726" text-anchor="middle" font-size="9" fill="#ea580c">→ clean_report.html</text>
+
+  <!-- Phase 2 -->
+  <rect x="1380" y="648" width="148" height="96" rx="10" fill="#fff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="1454" y="673" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Phase 2: EDA 分析</text>
+  <text x="1454" y="693" text-anchor="middle" font-size="9" fill="#9a3412">tools_eda_agent.py</text>
+  <text x="1454" y="708" text-anchor="middle" font-size="9" fill="#9a3412">分布分析 / 相关矩阵</text>
+  <text x="1454" y="726" text-anchor="middle" font-size="9" fill="#ea580c">→ eda_report.html</text>
+
+  <!-- Phase arrow -->
+  <path d="M1368,692 L1375,692" stroke="#f97316" stroke-width="2.2" fill="none" marker-end="url(#aOrange)"/>
+
+  <!-- Phase 3 -->
+  <rect x="1220" y="758" width="308" height="64" rx="10" fill="#fff" stroke="#fdba74" stroke-width="1.5"/>
+  <text x="1374" y="782" text-anchor="middle" font-size="12" font-weight="700" fill="#c2410c">Phase 3: 自然语言总结</text>
+  <text x="1374" y="802" text-anchor="middle" font-size="10" fill="#9a3412">master_agent._generate_natural_summary()</text>
+  <text x="1374" y="818" text-anchor="middle" font-size="9" fill="#ea580c">→ summary.md + deliverables[] 写入 state</text>
+
+  <!-- Deliverables note -->
+  <rect x="1220" y="835" width="308" height="35" rx="6" fill="#fed7aa" opacity="0.6"/>
+  <text x="1374" y="857" text-anchor="middle" font-size="10" fill="#9a3412">📦 deliverables → Gradio Tabs 侧边面板 iframe</text>
+
+
+  <!-- ============================================================ -->
+  <!-- LAYER 4: SUPPORTING SYSTEMS (y=1120~1340)                   -->
+  <!-- ============================================================ -->
+  <rect x="30" y="1110" width="1540" height="225" rx="16" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="55" y="1140" font-size="15" font-weight="700" fill="#475569">🧩 支撑系统 — Supporting Systems (各分支共用)</text>
+
+  <!-- Tool Registry -->
+  <rect x="70" y="1160" width="290" height="155" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="215" y="1188" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">📦 ToolRegistry 单例</text>
+  <text x="215" y="1210" text-anchor="middle" font-size="11" fill="#64748b">src/agent/tools/registry.py</text>
+  <text x="215" y="1232" text-anchor="middle" font-size="12" fill="#475569" font-weight="600">register() · get() · list_tools()</text>
+  <rect x="90" y="1246" width="250" height="54" rx="6" fill="#f8fafc"/>
+  <text x="215" y="1266" text-anchor="middle" font-size="10" fill="#64748b">credit_query · loan_approval_check</text>
+  <text x="215" y="1284" text-anchor="middle" font-size="10" fill="#64748b">DataProcessingTool · MCP Adapter 扩展点</text>
+
+  <!-- Memory System -->
+  <rect x="395" y="1160" width="320" height="155" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="555" y="1188" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">🧠 Memory 记忆系统</text>
+  <text x="555" y="1210" text-anchor="middle" font-size="11" fill="#64748b">src/agent/memory/</text>
+  <rect x="415" y="1222" width="135" height="78" rx="8" fill="#f0fdf4" stroke="#bbf7d0"/>
+  <text x="482" y="1245" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">ShortTermMemory</text>
+  <text x="482" y="1265" text-anchor="middle" font-size="9" fill="#047857">对话历史缓存</text>
+  <text x="482" y="1283" text-anchor="middle" font-size="9" fill="#047857">滑动窗口 max_turns</text>
+
+  <rect x="565" y="1222" width="135" height="78" rx="8" fill="#ecfdf5" stroke="#bbf7d0"/>
+  <text x="632" y="1245" text-anchor="middle" font-size="11" font-weight="700" fill="#166534">LongTermMemory</text>
+  <text x="632" y="1265" text-anchor="middle" font-size="9" fill="#047857">FAISS 向量存储</text>
+  <text x="632" y="1283" text-anchor="middle" font-size="9" fill="#047857">N 轮后语义摘要压缩</text>
+
+  <!-- LLM Layer -->
+  <rect x="745" y="1160" width="290" height="155" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="890" y="1188" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">🤖 LLM 层</text>
+  <text x="890" y="1210" text-anchor="middle" font-size="11" fill="#64748b">src/utils/llm.py · get_llm()</text>
+  <rect x="765" y="1225" width="250" height="76" rx="8" fill="#f1f5f9"/>
+  <text x="890" y="1247" text-anchor="middle" font-size="11" font-weight="600" fill="#475569">ChatOpenAI 兼容接口</text>
+  <text x="890" y="1266" text-anchor="middle" font-size="10" fill="#64748b">GLM-flash-4 / 任意 OpenAI 兼容模型</text>
+  <text x="890" y="1284" text-anchor="middle" font-size="10" fill="#64748b">config.yaml 驱动 · ainvoke() / Streaming</text>
+
+  <!-- Config & External -->
+  <rect x="1065" y="1160" width="290" height="155" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="1210" y="1188" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">⚙️ 配置 &amp; 外部服务</text>
+  <text x="1210" y="1210" text-anchor="middle" font-size="11" fill="#64748b">ConfigLoader · config/config.yaml</text>
+  <rect x="1085" y="1225" width="250" height="76" rx="8" fill="#f1f5f9"/>
+  <text x="1210" y="1247" text-anchor="middle" font-size="10" fill="#64748b">agent · tools · data_processing · memory</text>
+  <text x="1210" y="1266" text-anchor="middle" font-size="10" fill="#64748b">tavily API Key · web_search enabled</text>
+  <text x="1210" y="1284" text-anchor="middle" font-size="10" fill="#64748b">gradio port / fastapi port / model config</text>
+
+  <!-- Vector DB -->
+  <rect x="1385" y="1160" width="170" height="155" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="1470" y="1188" text-anchor="middle" font-size="15" font-weight="700" fill="#334155">💾 向量数据库</text>
+  <text x="1470" y="1210" text-anchor="middle" font-size="11" fill="#64748b">vector_db/</text>
+  <text x="1470" y="1232" text-anchor="middle" font-size="10" fill="#64748b">*.faiss (FAISS索引)</text>
+  <text x="1470" y="1252" text-anchor="middle" font-size="10" fill="#64748b">*.pkl (原始文档块)</text>
+  <text x="1470" y="1272" text-anchor="middle" font-size="10" fill="#64748b">Embedding 模型</text>
+  <text x="1470" y="1292" text-anchor="middle" font-size="9" fill="#94a3b8">供 RAG/Hybrid 检索使用</text>
+
+  <!-- Connecting lines between supporting systems -->
+  <line x1="360" y1="1238" x2="390" y2="1238" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="715" y1="1238" x2="740" y2="1238" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="1035" y1="1238" x2="1060" y2="1238" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="1355" y1="1238" x2="1380" y2="1238" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+
+  <!-- ============================================================ -->
+  <!-- LAYER 5: OUTPUT (y=1360~1490)                                -->
+  <!-- ============================================================ -->
+  <rect x="30" y="1355" width="1540" height="135" rx="16" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.5"/>
+  <text x="55" y="1383" font-size="15" font-weight="700" fill="#7c3aed">📤 输出层 — Post-Process &amp; Deliver</text>
+
+  <!-- post_process_node -->
+  <rect x="80" y="1398" width="230" height="74" rx="14" fill="url(#gInfra)" filter="url(#shadow)"/>
+  <text x="195" y="1430" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">📤 post_process_node</text>
+  <text x="195" y="1452" text-anchor="middle" font-size="10" fill="#cbd5e1">统一后处理 · 格式清洗 · answer 组装</text>
+
+  <!-- Gradio Chat Display -->
+  <rect x="350" y="1398" width="270" height="74" rx="14" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="485" y="1428" text-anchor="middle" font-size="14" font-weight="700" fill="#4338ca">💬 聊天区 (Chatbot)</text>
+  <text x="485" y="1448" text-anchor="middle" font-size="10" fill="#6366f1">Markdown 渲染 · 流式输出 · history 管理</text>
+  <text x="485" y="1464" text-anchor="middle" font-size="9" fill="#818cf8">Gradio gr.ChatInterface</text>
+
+  <!-- Gradio Side Panel -->
+  <rect x="660" y="1398" width="300" height="74" rx="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="810" y="1428" text-anchor="middle" font-size="14" font-weight="700" fill="#92400e">📊 报告侧边栏 (gr.Tabs)</text>
+  <text x="810" y="1448" text-anchor="middle" font-size="10" fill="#b45309">Tab1: 数据清洗报告 · Tab2: EDA 报告</text>
+  <text x="810" y="1464" text-anchor="middle" font-size="9" fill="#d97706">deliverables → /file= 静态 URL → iframe 嵌入 HTML</text>
+
+  <!-- API Response -->
+  <rect x="1000" y="1398" width="240" height="74" rx="14" fill="#e0e7ff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="1120" y="1428" text-anchor="middle" font-size="14" font-weight="700" fill="#4338ca">🌐 API Response</text>
+  <text x="1120" y="1448" text-anchor="middle" font-size="10" fill="#6366f1">JSON 同步响应 / SSE 流式推送</text>
+  <text x="1120" y="1464" text-anchor="middle" font-size="9" fill="#818cf8">QueryResponse Schema (answer + deliverables)</text>
+
+  <!-- Output files -->
+  <rect x="1280" y="1398" width="260" height="74" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" filter="url(#shadowSm)"/>
+  <text x="1410" y="1428" text-anchor="middle" font-size="14" font-weight="700" fill="#065f46">📁 产物文件 (output/)</text>
+  <text x="1410" y="1448" text-anchor="middle" font-size="10" fill="#047857">clean_report.html · eda_report.html</text>
+  <text x="1410" y="1464" text-anchor="middle" font-size="9" fill="#059669">summary.md · CSV / PNG 可视化产物</text>
+
+  <!-- Output arrows from post_process -->
+  <line x1="310" y1="1435" x2="345" y2="1435" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+  <line x1="620" y1="1435" x2="655" y2="1435" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+  <line x1="960" y1="1435" x2="995" y2="1435" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+  <line x1="1240" y1="1435" x2="1275" y2="1435" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+
+
+  <!-- ============================================================ -->
+  <!-- BRANCH → POST_PROCESS connecting lines (bottom of diagram)   -->
+  <!-- ============================================================ -->
+
+  <!-- All 4 branches converge to post_process -->
+  <path d="M250,750 L250,1510 L195,1510 L195,1478" stroke="#7c3aed" stroke-width="1.8" fill="none" marker-end="url(#aGray)" stroke-dasharray="6,4"/>
+  <path d="M650,870 L650,1510 L195,1510" stroke="#7c3aed" stroke-width="1.8" fill="none" stroke-dasharray="6,4"/>
+  <path d="M1010,840 L1010,1510 L195,1510" stroke="#7c3aed" stroke-width="1.8" fill="none" stroke-dasharray="6,4"/>
+  <path d="M1375,880 L1375,1510 L195,1510" stroke="#7c3aed" stroke-width="1.8" fill="none" stroke-dasharray="6,4"/>
+
+
+  <!-- ============================================================ -->
+  <!-- LEGEND                                                      -->
+  <!-- ============================================================ -->
+  <text x="60" y="1530" font-size="13" font-weight="700" fill="#334155">图例 Legend</text>
+
+  <rect x="60" y="1545" width="22" height="16" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.2"/>
+  <text x="90" y="1558" font-size="12" fill="#64748b">入口层 Entry</text>
+
+  <rect x="180" y="1545" width="22" height="16" rx="4" fill="#fefce8" stroke="#fde68a" stroke-width="1.2"/>
+  <text x="210" y="1558" font-size="12" fill="#64748b">核心状态机 Core</text>
+
+  <rect x="330" y="1545" width="22" height="16" rx="4" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.2"/>
+  <text x="360" y="1558" font-size="12" fill="#64748b">四路由分支 Routes</text>
+
+  <rect x="470" y="1545" width="22" height="16" rx="4" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="500" y="1558" font-size="12" fill="#64748b">支撑系统 Support</text>
+
+  <rect x="610" y="1545" width="22" height="16" rx="4" fill="#faf5ff" stroke="#e9d5ff" stroke-width="1.2"/>
+  <text x="640" y="1558" font-size="12" fill="#64748b">输出层 Output</text>
+
+  <line x1="740" y1="1553" x2="780" y2="1553" stroke="#94a3b8" stroke-width="2" marker-end="url(#aGray)"/>
+  <text x="790" y="1558" font-size="12" fill="#64748b">数据流 Data Flow</text>
+
+  <line x1="900" y1="1553" x2="940" y2="1553" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <text x="950" y="1558" font-size="12" fill="#64748b">异步/间接 Async</text>
+
+  <rect x="1060" y="1545" width="22" height="16" rx="4" fill="url(#gPureLLM)"/>
+  <text x="1090" y="1558" font-size="12" fill="#64748b">Pure LLM</text>
+  <rect x="1170" y="1545" width="22" height="16" rx="4" fill="url(#gRAG)"/>
+  <text x="1200" y="1558" font-size="12" fill="#64748b">RAG</text>
+  <rect x="1250" y="1545" width="22" height="16" rx="4" fill="url(#gReAct)"/>
+  <text x="1280" y="1558" font-size="12" fill="#64748b">ReAct</text>
+  <rect x="1330" y="1545" width="22" height="16" rx="4" fill="url(#gTools)"/>
+  <text x="1360" y="1558" font-size="12" fill="#64748b">Tools</text>
+
+</svg>
+
+<div class="legend" style="margin-top: 28px;">
+  <div class="legend-item"><div class="legend-swatch" style="background: linear-gradient(135deg,#6366f1,#8b5cf6);"></div> 入口层 (Gradio/FastAPI)</div>
+  <div class="legend-item"><div class="legend-swatch" style="background: linear-gradient(135deg,#f59e0b,#ef4444);"></div> 核心状态机 (LangGraph)</div>
+  <div class="legend-item"><div class="legend-swatch" style="fill:#10b981;"></div> 分支一: Pure LLM</div>
+  <div class="legend-item"><div class="legend-swatch" style="fill:#3b82f6;"></div> 分支二: RAG</div>
+  <div class="legend-item"><div class="legend-swatch" style="fill:#ec4899;"></div> 分支三: ReAct</div>
+  <div class="legend-item"><div class="legend-swatch" style="fill:#f97316;"></div> 分支四: Tools</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#f1f5f9;border:1px solid #cbd5e1;"></div> 支撑系统 (Registry/Memory/LLM/Config)</div>
+  <div class="legend-item"><div class="legend-swatch" style="background:#faf5ff;border:1px solid #e9d5ff;"></div> 输出层 (Post-Process/Deliver)</div>
+</div>
+
+</div>
+</body>
+</html>

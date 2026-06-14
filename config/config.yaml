@@ -1,0 +1,171 @@
+model:
+  embedding_model_name: "BAAI/bge-small-zh-v1.5"
+  embedding_model_path: "./model/bge-small-zh-v1.5"
+
+  local_llm_model_path: "./model/Llama-3.1-8B-Instruct-GGUF/Llama-3.1-8B-Instruct.Q4_K_M.gguf"
+  local_llm_context_window: 8192
+
+  # 智谱AI 配置（在这里填！）
+  cloud_api_key: "33d886fdf2634eedae745273d3ba49c3.N6GOVyAwkTKwmMMA"
+  cloud_api_base: "https://open.bigmodel.cn/api/paas/v4/"
+  cloud_model_name: "glm-4-flash"   # 免费快版
+
+rag:
+  #分块参数
+  chunk_size: 512
+  chunk_overlap: 64
+  #语义分块（Markdown标题切分）
+  use_semantic_chunk: true
+  #检索参数
+  top_k: 5
+  # Reranker参数
+  use_reranker: true
+  initial_k: 20  # 初筛数量
+  reranker_model: "BAAI/bge-reranker-base"
+  # Query改写（可选）
+  use_query_rewrite: false
+  # 去重参数
+  dedup_enabled: true
+  chunk_similarity_threshold: 0.95
+  #向量数据库
+  vector_db_path: "./vector_db/faiss_index"
+  # Hybrid RAG 参数
+  use_hybrid: true           # 是否启用 Hybrid RAG
+  bm25_top_k: 30            # BM25 检索返回数量
+  rrf_k: 60                  # RRF 融合平滑参数（30-100）
+  hybrid_weight_vector: [0.5, 0.5]  # [向量权重, BM25权重]，可调整优先级
+
+# ============ Agent 配置 ============
+agent:
+  enabled: true                    # 是否启用 Agent 模式
+  # Supervisor 配置
+  supervisor:
+    intent_confidence_threshold: 0.6  # 意图置信度阈值
+  # Retriever 配置
+  retriever:
+    use_hybrid: true              # 继承 rag.use_hybrid
+    fallback_to_chat: true        # 无结果时降级为闲聊
+
+  # ============ 复杂度分析配置 ============
+  complexity:
+    enabled: true                 # 是否启用复杂度分析
+    simple_threshold: 0.8         # 置信度 > 此值且 intent=knowledge → 快速路径
+    # 触发复杂处理的关键词（匹配任一即进入 ReAct 循环）
+    complex_keywords:
+      - "最新"
+      - "今天"
+      - "现在"
+      - "趋势"
+      - "分析"
+      - "对比"
+      - "比较"
+      - "搜索"
+      - "帮我查"
+      - "预测"
+      - "推荐"
+
+  # ============ ReAct 循环配置 ============
+  react:
+    enabled: true                 # 是否启用 ReAct 循环
+    max_iterations: 5            # 最大循环次数
+    confidence_threshold: 0.7    # 答案置信度阈值
+    # 循环终止条件（满足任一即结束）
+    # - 达到 max_iterations
+    # - 置信度 > confidence_threshold
+    # - 收集了足够的上下文（retrieved + web_results >= 3）
+
+  # Generator 配置
+  generator:
+    temperature: 0.3
+    max_tokens: 2048
+    include_citations: true        # 包含引用
+
+# ============ 工具配置 ============
+tools:
+  web_search:
+    enabled: true                 # 启用 WebSearch
+    provider: "tavily"            # 或 "duckduckgo"
+    tavily_api_key: "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"           # Tavily API Key
+
+# ============ 记忆配置 ============
+memory:
+  enabled: true                    # 是否启用记忆系统
+  # 短期记忆
+  short_term:
+    max_messages: 20              # 最大消息数
+    max_tokens: 4000              # 最大 Token 数
+  # 长期记忆
+  long_term:
+    enabled: true
+    db_path: "./vector_db/memory_index"  # 记忆向量库路径
+    max_memories: 100             # 最大记忆条数
+    similarity_threshold: 0.7     # 相似度阈值
+  # 写入策略
+  auto_summarize: true            # 自动摘要存入长期记忆
+  summarize_after_turns: 10        # 多少轮对话后触发摘要
+  # 读取策略
+  retrieve_long_term: true        # 检索长期记忆作为上下文
+  long_term_top_k: 3             # 长期记忆检索数量
+
+dedup:
+  registry_path: "./data/document_registry.json"
+
+log:
+  log_path: "./logs/agent.log"
+  log_level: "INFO"
+
+data:
+  raw_data_path: "./data/raw"
+  processed_data_path: "./data/processed"
+
+
+# ============ 数据自动化处理配置 ============
+data_processing:
+  enabled: true
+  output_dir: "./output/data_processing"
+  missing_threshold: 0.3
+  cat_threshold: 10
+  max_categories: 20
+# ============ FastAPI 服务器配置 ============
+api:
+  # CORS 配置
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+    - "http://127.0.0.1:*"
+  
+  # 缓存配置
+  cache:
+    enabled: true                 # 启用缓存
+    ttl: 3600                     # 查询结果缓存时间（秒）
+    max_size: 10000               # 最大缓存条目数
+    embedding_ttl: 86400          # 嵌入缓存时间（秒）
+  
+  # 速率限制
+  rate_limit:
+    enabled: true
+    max_requests_per_minute: 100  # 每分钟最大请求数
+    max_concurrent_queries: 50    # 最大并发查询数
+  
+  # 连接池
+  connection_pool:
+    llm_pool_size: 5              # LLM 连接数
+    vector_db_pool_size: 2        # 向量库线程数
+    http_pool_size: 10            # HTTP 连接数
+    max_retries: 3                # 最大重试次数
+  
+  # 超时配置
+  timeout:
+    query_default: 30             # 默认查询超时（秒）
+    query_max: 300                # 最大查询超时（秒）
+    llm_timeout: 60               # LLM 调用超时
+    vector_search_timeout: 10     # 向量搜索超时
+    web_search_timeout: 15        # Web 搜索超时
+  
+  # 工作进程（生产模式）
+  workers: 4                      # 工作进程数（推荐 = CPU核心数）
+  
+  # 日志
+  log_level: "INFO"
+  access_log: true
+  
