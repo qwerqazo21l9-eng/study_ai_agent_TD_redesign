@@ -85,7 +85,7 @@ tools:
   web_search:
     enabled: true                 # 启用 WebSearch
     provider: "tavily"            # 或 "duckduckgo"
-    tavily_api_key: "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"           # Tavily API Key
+    tavily_api_key: "..."           # Tavily API Key
 
 # ============ 记忆配置 ============
 memory:
